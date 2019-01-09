@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //dont destroy attached object when load, otherwisse player gone
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
