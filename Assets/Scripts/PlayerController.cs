@@ -8,10 +8,22 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D theRB;
     public float moveSpeed;
     public Animator myAnim;
+    //because of the static var, player can only be instantiated once(i think)
+    public static PlayerController instance;
+
+    public string areaTransitionName;
     // Start is called before the first frame update
     void Start()
     {
-        //dont destroy attached object when load, otherwisse player gone
+        if(instance == null) 
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        //dont destroy attached object when load(in this place, player), probably automatically done for garbage collection purposes etc.
         DontDestroyOnLoad(gameObject);
     }
 

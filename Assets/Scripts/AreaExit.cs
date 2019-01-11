@@ -7,10 +7,14 @@ public class AreaExit : MonoBehaviour
 {
     public string areaToLoad;
 
+    public string areaTransitionName;
+    //entry point, set to whatever current value of entrance is here, this logically puts us into the next world. We leave to where we entered from.
+    public AreaEntrance theEntrance;
+
     // Start is called before the first frame update
     void Start()
     {
-     
+        theEntrance.transitionName = areaTransitionName;
     }
 
     // Update is called once per frame
@@ -25,6 +29,9 @@ public class AreaExit : MonoBehaviour
        {
            SceneManager.LoadScene(areaToLoad);
        }
+        //because playercontroller is set to public static there can only ever be one instance, handy for accessing globally
+        //this is for entering and exiting scenes.
+        PlayerController.instance.areaTransitionName = areaTransitionName;
 
     }
 }
