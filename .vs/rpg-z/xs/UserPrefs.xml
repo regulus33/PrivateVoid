@@ -1,11 +1,8 @@
 ﻿<Properties StartupConfiguration="{51CDFD20-2E2F-52C1-A786-BF1DAA3C6228}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="14" Column="38" />
-      <File FileName="Assets/Scripts/AreaExit.cs" Line="14" Column="53" />
-      <File FileName="Assets/Scripts/AreaEntrance.cs" Line="12" Column="1" />
-      <File FileName="Assets/Scripts/PlayerLoader.cs" Line="14" Column="32" />
-      <File FileName="Assets/Scripts/CameraController.cs" Line="7" Column="12" />
+      <File FileName="Assets/Scripts/CameraController.cs" Line="32" Column="8" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="57" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

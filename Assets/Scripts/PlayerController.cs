@@ -13,6 +13,13 @@ public class PlayerController : MonoBehaviour
 
     public string areaTransitionName;
     // Start is called before the first frame update
+
+    //character boundaries
+    private Vector3 bottomLeftLimit;
+
+    private Vector3 topRightLimit;
+
+
     void Start()
     {
         if(instance == null) 
@@ -41,5 +48,15 @@ public class PlayerController : MonoBehaviour
             myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
         
         }
+        //youre just taking the current value and limiting it to our parameters
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
+
+    }
+
+    public void SetBounds(Vector3 botleft, Vector3 topRight)
+    {
+                                               //this part keeps player from half leaving the screen 
+        bottomLeftLimit = botleft + new Vector3(1f, 1f, 0f);
+        topRightLimit = topRight + new Vector3(-1f, -1f, 0f);
     }
 }
