@@ -1,8 +1,11 @@
 ﻿<Properties StartupConfiguration="{51CDFD20-2E2F-52C1-A786-BF1DAA3C6228}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AreaEntrance.cs">
     <Files>
       <File FileName="Assets/Scripts/CameraController.cs" Line="38" Column="102" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="58" Column="102" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="33" Column="138" />
+      <File FileName="Assets/Scripts/AreaExit.cs" Line="26" Column="45" />
+      <File FileName="Assets/Scripts/UIFade.cs" Line="18" Column="28" />
+      <File FileName="Assets/Scripts/AreaEntrance.cs" Line="15" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
