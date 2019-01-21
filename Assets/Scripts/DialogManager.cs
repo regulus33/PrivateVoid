@@ -27,9 +27,18 @@ public class DialogManager : MonoBehaviour
             //is it being pressed
             if (Input.GetButtonUp("Fire1"))
             {
+
                 currentLine++;
 
-                dialogText.text = dialogLines[currentLine];
+                if(currentLine >= dialogLines.Length)
+                {
+                    dialogBox.SetActive(false);
+                }
+                else
+                {
+                    dialogText.text = dialogLines[currentLine];
+                }
+
             }
         }
 
