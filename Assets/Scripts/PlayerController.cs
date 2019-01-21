@@ -28,7 +28,10 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            if(instance != this)
+            { 
+                Destroy(gameObject);
+            }
         }
         //dont destroy attached object when load(in this place, player), probably automatically done for garbage collection purposes etc.
         DontDestroyOnLoad(gameObject);
