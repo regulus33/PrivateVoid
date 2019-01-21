@@ -13,9 +13,13 @@ public class DialogManager : MonoBehaviour
     public string[] dialogLines;
 
     public int currentLine;
+    public bool justStarted;
+
+    public static DialogManager instance;
 
     void Start()
     {
+        instance = this;
         dialogText.text = dialogLines[currentLine];   
     }
 
@@ -27,20 +31,39 @@ public class DialogManager : MonoBehaviour
             //is it being pressed
             if (Input.GetButtonUp("Fire1"))
             {
-
-                currentLine++;
-
-                if(currentLine >= dialogLines.Length)
+                if (!justStarted)
                 {
-                    dialogBox.SetActive(false);
+
+                    currentLine++;
+
+                    if (currentLine >= dialogLines.Length)
+                    {
+                        dialogBox.SetActive(false);
+                    }
+                    else
+                    {
+                        dialogText.text = dialogLines[currentLine];
+                    }
+
                 }
                 else
                 {
-                    dialogText.text = dialogLines[currentLine];
+                    justStarted = false;
                 }
-
             }
         }
 
+    }
+
+    public void ShowDialog(string[] newLines)
+    {
+        dialogLines = newLines;
+
+        currentLine = 0;
+
+        dialogText.text = dialogLines[0];
+        dialogBox.SetActive(true);
+
+        justStarted = true;
     }
 }
