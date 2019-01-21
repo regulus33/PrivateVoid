@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 topRightLimit;
 
+    public bool canMove = true;
+
 
     void Start()
     {
@@ -40,11 +42,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Matrix4x4 and y only for 2d
-        theRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed; 
-        myAnim.SetFloat("moveX", theRB.velocity.x);
-        myAnim.SetFloat("moveY", theRB.velocity.y);
+        if (canMove)
+        {
+            theRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
+            //Matrix4x4 and y only for 2d
+            myAnim.SetFloat("moveX", theRB.velocity.x);
+            myAnim.SetFloat("moveY", theRB.velocity.y);
 
+        }
+        else
+        {
+            theRB.velocity = Vector2.zero;
+        }
+ 
         if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1 ) {
             
             myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
