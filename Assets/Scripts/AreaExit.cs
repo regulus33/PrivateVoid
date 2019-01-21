@@ -27,7 +27,7 @@ public class AreaExit : MonoBehaviour
         if (shouldLoadAfterFade)
         {
             waitToLoad -= Time.deltaTime;
-            if(waitToLoad <= 0)
+            if(waitToLoad <= 0f)
             {
                 shouldLoadAfterFade = false;
                 SceneManager.LoadScene(areaToLoad);

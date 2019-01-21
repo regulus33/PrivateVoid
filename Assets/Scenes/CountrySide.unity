@@ -6896,5 +6896,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8900002933522610944, guid: 905177aadb69b44198619b65929b51db,
+        type: 3}
+      propertyPath: shouldFadeToBlack
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 905177aadb69b44198619b65929b51db, type: 3}
