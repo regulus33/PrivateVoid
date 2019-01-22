@@ -49,29 +49,38 @@ public class CharStats : MonoBehaviour
     public void AddExp(int expToAdd)
     {
         currentEXP += expToAdd;
-        if(currentEXP > expToNextLevel[playerLevel])
+        if (playerLevel < maxLevel)
         {
-            currentEXP -= expToNextLevel[playerLevel];
-            playerLevel++;
 
-            //determine strenght or defense 
-            //even or odd
-            if(playerLevel%2 == 0)
+            if (currentEXP > expToNextLevel[playerLevel])
             {
-                strength++;
+                currentEXP -= expToNextLevel[playerLevel];
+                playerLevel++;
+                
+                //determine strenght or defense 
+                //even or odd
+                if(playerLevel%2 == 0)
+                {
+                    strength++;
+                }
+                else
+                {
+                    defence++;
+                }
+                
+                maxHP = Mathf.FloorToInt(maxHP * 1.05f);
+                //make the current now max amen
+                currentHP = maxHP;
+                
+                maxMP = maxMP + mpLvlBonus[playerLevel];
+                currentMP = maxMP; 
+                
             }
-            else
-            {
-                defence++;
-            }
-
-            maxHP = Mathf.FloorToInt(maxHP * 1.05f);
-            //make the current now max amen
-            currentHP = maxHP;
-
-            maxMP = maxMP + mpLvlBonus[playerLevel];
-            currentMP = maxMP; 
-
+        }
+        //dont go over once at full highest level
+        if(playerLevel >= maxLevel)
+        {
+            currentEXP = 0;
         }
     }
 }
