@@ -21,6 +21,9 @@ public class DialogManager : MonoBehaviour
     {
         instance = this;
         dialogText.text = dialogLines[currentLine];   
+        //disbale on instantiation, need to figure out why the FUCK I can't just disable this in the GUI
+        dialogBox.SetActive(false);
+        GameManager.instance.dialogActive = false;
     }
 
     // Update is called once per frame
@@ -40,7 +43,7 @@ public class DialogManager : MonoBehaviour
                     {
                         dialogBox.SetActive(false);
 
-                        PlayerController.instance.canMove = true;
+                        GameManager.instance.dialogActive = false;
                     }
                     else
                     {
@@ -74,7 +77,7 @@ public class DialogManager : MonoBehaviour
         //only make little box for people active when person is true(youre talking and not inspecting)
         nameBox.SetActive(isPerson);
 
-        PlayerController.instance.canMove = false;
+        GameManager.instance.dialogActive = true;
     }
 
     public void CheckIfName()

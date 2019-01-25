@@ -36,9 +36,10 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame after Update
     void LateUpdate()
     {
-        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+       
+            transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
 
-        //keep the camera inside the bounds  mathfunctions.clamp keeps a value between a min and max number so cam position never exceeds boundary
-       transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z); 
+            //keep the camera inside the bounds  mathfunctions.clamp keeps a value between a min and max number so cam position never exceeds boundary
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
     }
 }

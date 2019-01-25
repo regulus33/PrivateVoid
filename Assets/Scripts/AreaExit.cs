@@ -36,12 +36,14 @@ public class AreaExit : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-       if(other.tag == "Player") 
+       if(collision.tag == "Player") 
        {
+           
            //SceneManager.LoadScene(areaToLoad);
             shouldLoadAfterFade = true;
+            //GameManager.instance.fadingBetweenAreas = true;
             UIFade.instance.FadeToBlack();
        }
         //because playercontroller is set to public static there can only ever be one instance, handy for accessing globally
