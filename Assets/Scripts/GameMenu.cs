@@ -17,6 +17,8 @@ public class GameMenu : MonoBehaviour
 
     public GameObject[] statusButtons;
 
+    public ItemButton[] itemButtons; 
+
     // Start is called before the first frame update
 
     public Text statusName, statusHP, statusMP, statusStr, statusDef, statusWpnEqpd, statusWpnPwr, statusArmrEqpd, statusArmrPwr, statusExp;
@@ -146,5 +148,12 @@ public class GameMenu : MonoBehaviour
         statusExp.text = (playerStats[selected].expToNextLevel[playerStats[selected].playerLevel]-playerStats[selected].currentEXP).ToString();
 
         statusImage.sprite = playerStats[selected].charImage;
+    }
+
+    public void ShowItems()
+    {
+        for(int i=0; i < itemButtons.Length; i++){
+            itemButtons[i].buttonValue = i;
+        }
     }
 }
