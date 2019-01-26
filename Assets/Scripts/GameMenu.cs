@@ -28,8 +28,9 @@ public class GameMenu : MonoBehaviour
         {
             if (theMenu.activeInHierarchy)
             {
-                theMenu.SetActive(false);
-                GameManager.instance.gameMenuOpen = false; 
+                //theMenu.SetActive(false);
+                //GameManager.instance.gameMenuOpen = false; 
+                CloseMenu();
 
             }
             else
@@ -84,5 +85,17 @@ public class GameMenu : MonoBehaviour
                 windows[i].SetActive(false);
             }
         }
+    }
+
+    public void CloseMenu()
+    {
+        //reset window state
+        for(int i = 0; i < windows.Length; i++)
+        {
+            windows[i].SetActive(false);
+        }
+
+        theMenu.SetActive(false);
+        GameManager.instance.gameMenuOpen = false;
     }
 }
