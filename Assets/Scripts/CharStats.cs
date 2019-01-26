@@ -19,6 +19,7 @@ public class CharStats : MonoBehaviour
     public int strength;
     public int defence;
     public int armrPwr;
+    public int wpnPwr;
     public string equippedWpn;
     public string equippedArmr;
     public Sprite charImage;

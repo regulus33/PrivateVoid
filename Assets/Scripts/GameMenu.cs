@@ -18,6 +18,9 @@ public class GameMenu : MonoBehaviour
     public GameObject[] statusButtons;
 
     // Start is called before the first frame update
+
+    public Text statusName, statusHP, statusMP, statusStr, statusDef, statusWpnEqpd, statusWpnPwr, statusArmrEqpd, statusArmrPwr, statusExp;
+    public Image statusImage;  
     void Start()
     {
         
@@ -105,6 +108,8 @@ public class GameMenu : MonoBehaviour
     public void OpenStatus() 
     {
         UpdateMainStats();
+        //get status of character show and populate
+        StatusChar(0);
         
         for(int i = 0; i < statusButtons.Length; i++)
         {
@@ -112,5 +117,34 @@ public class GameMenu : MonoBehaviour
             statusButtons[i].SetActive(playerStats[i].gameObject.activeInHierarchy);
             statusButtons[i].GetComponentInChildren<Text>().text = playerStats[i].charName;
         }
+    }
+
+    public void StatusChar(int selected) 
+    {
+        statusName.text = playerStats[selected].charName;
+        
+        statusHP.text = playerStats[selected].currentHP + "/" + playerStats[selected].maxHP;
+        
+        statusMP.text = "" + playerStats[selected].currentMP + "/" + playerStats[selected].maxMP;
+        
+        statusStr.text = playerStats[selected].strength.ToString();
+        
+        statusDef.text = playerStats[selected].defence.ToString();
+        
+        if(playerStats[selected].equippedWpn != "")
+        {
+            statusWpnEqpd.text = playerStats[selected].equippedWpn;
+        }
+        statusWpnPwr.text = playerStats[selected].wpnPwr.ToString();
+        
+        if(playerStats[selected].equippedWpn != "")
+        {
+            statusArmrEqpd.text = playerStats[selected].equippedArmr;
+        }
+        statusArmrPwr.text = playerStats[selected].armrPwr.ToString();
+
+        statusExp.text = (playerStats[selected].expToNextLevel[playerStats[selected].playerLevel]-playerStats[selected].currentEXP).ToString();
+
+        statusImage.sprite = playerStats[selected].charImage;
     }
 }
