@@ -21,4 +21,13 @@ public class ItemButton : MonoBehaviour
     {
         
     }
+
+    public void Press()
+    {
+        //is clicked button containing equipped based on index comparison
+        if(GameManager.instance.itemsHeld[buttonValue] != "")
+        {
+             GameMenu.instance.SelectItem(GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[buttonValue]));
+        }
+    }
 }

@@ -19,13 +19,21 @@ public class GameMenu : MonoBehaviour
 
     public ItemButton[] itemButtons; 
 
+    public static GameMenu instance;
+
+    public string selectedItem;
+
+    public Item activeItem;
+
+    public Text itemName, itemDescription, useButtonText;
+
     // Start is called before the first frame update
 
     public Text statusName, statusHP, statusMP, statusStr, statusDef, statusWpnEqpd, statusWpnPwr, statusArmrEqpd, statusArmrPwr, statusExp;
     public Image statusImage;  
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -153,7 +161,7 @@ public class GameMenu : MonoBehaviour
     public void ShowItems()
     {
         GameManager.instance.SortItems();
-         
+
         for(int i=0; i < itemButtons.Length; i++){
             itemButtons[i].buttonValue = i;
             
@@ -170,5 +178,22 @@ public class GameMenu : MonoBehaviour
             }
 
         }
+    }
+
+    public void SelectItem(Item newItem)
+    {   
+       activeItem = newItem;
+
+       if(activeItem.isItem){
+           useButtonText.text = "Use";
+       }
+
+       if(activeItem.isWeapon || activeItem.isArmor) 
+       {
+           useButtonText.text = "Equip";
+       }
+
+       itemName.text = activeItem.itemName;
+       itemDescription.text = activeItem.description;
     }
 }
