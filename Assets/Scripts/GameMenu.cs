@@ -105,9 +105,10 @@ public class GameMenu : MonoBehaviour
     public void OpenStatus() 
     {
         UpdateMainStats();
-
+        
         for(int i = 0; i < statusButtons.Length; i++)
         {
+            
             statusButtons[i].SetActive(playerStats[i].gameObject.activeInHierarchy);
             statusButtons[i].GetComponentInChildren<Text>().text = playerStats[i].charName;
         }
