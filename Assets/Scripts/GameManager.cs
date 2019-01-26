@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     {
         for(int i=0; i < referenceItems.Length; i++)
         {
-            if(referenceItems[i].itemName == itemToGrab){
+            if(referenceItems[i].itemName.Trim() == itemToGrab.Trim()){
                 return referenceItems[i];
             }
         }

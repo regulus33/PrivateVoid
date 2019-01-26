@@ -154,6 +154,19 @@ public class GameMenu : MonoBehaviour
     {
         for(int i=0; i < itemButtons.Length; i++){
             itemButtons[i].buttonValue = i;
+            
+            if (GameManager.instance.itemsHeld[i] != null && GameManager.instance.itemsHeld[i] != "" )
+            {
+                itemButtons[i].buttonImage.gameObject.SetActive(true);
+                
+                itemButtons[i].buttonImage.sprite = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[i]).itemSprite;
+                
+                itemButtons[i].amountText.text = GameManager.instance.numberOfItems[i].ToString();
+            } else {
+                itemButtons[i].buttonImage.gameObject.SetActive(false);
+                itemButtons[i].amountText.text = "";
+            }
+
         }
     }
 }
