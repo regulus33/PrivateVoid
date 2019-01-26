@@ -1680,7 +1680,7 @@ GameObject:
   - component: {fileID: 383938602}
   - component: {fileID: 383938601}
   m_Layer: 5
-  m_Name: 'Text '
+  m_Name: name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4712,6 +4712,18 @@ PrefabInstance:
       propertyPath: itemButtons.Array.data[29]
       value: 
       objectReference: {fileID: 2004293183}
+    - target: {fileID: 1028815213, guid: 6fc6d32a1d7d749ce8c209b977666c2e, type: 3}
+      propertyPath: itemName
+      value: 
+      objectReference: {fileID: 383938601}
+    - target: {fileID: 1028815213, guid: 6fc6d32a1d7d749ce8c209b977666c2e, type: 3}
+      propertyPath: itemDescription
+      value: 
+      objectReference: {fileID: 1680358142}
+    - target: {fileID: 1028815213, guid: 6fc6d32a1d7d749ce8c209b977666c2e, type: 3}
+      propertyPath: useButtonText
+      value: 
+      objectReference: {fileID: 1617201422}
     - target: {fileID: 1020933550, guid: 6fc6d32a1d7d749ce8c209b977666c2e, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -27920,7 +27932,7 @@ GameObject:
   - component: {fileID: 1680358143}
   - component: {fileID: 1680358142}
   m_Layer: 5
-  m_Name: 'Text '
+  m_Name: description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
