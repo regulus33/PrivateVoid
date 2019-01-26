@@ -44,4 +44,33 @@ public class GameManager : MonoBehaviour
         }
         return null; 
     }
+
+    public void SortItems() 
+    {
+        bool itemAfterSpace = true;
+
+        while(itemAfterSpace)
+        {
+            itemAfterSpace = false;
+            //dont go outside arr range
+            for (int i = 0; i < itemsHeld.Length - 1; i++)
+            {
+                if(itemsHeld[i] == "")
+                {
+                    //parallel these a
+                    itemsHeld[i] = itemsHeld[i + 1];
+                    itemsHeld[i + 1] = "";
+                     //parallel these b
+                    numberOfItems[i] = numberOfItems[i + 1];
+                    numberOfItems[i + 1] = 0;
+                    //did we move an item? If yes, we need to keep the while loop
+                    if(itemsHeld[i] != "") 
+                    {
+                        itemAfterSpace = true;
+                    }
+
+                }
+            }
+        }
+    }
 }
