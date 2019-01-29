@@ -196,4 +196,6 @@ public class GameMenu : MonoBehaviour
        itemName.text = activeItem.itemName;
        itemDescription.text = activeItem.description;
     }
+
+
 }

@@ -32,6 +32,12 @@ public class GameManager : MonoBehaviour
         {
             PlayerController.instance.canMove = true;
         }
+
+        if(Input.GetKeyDown(KeyCode.J))
+        {
+            AddItem("Health Potion");
+            AddItem("Bronze Armor");
+        }
     }
 
     public Item GetItemDetails(string itemToGrab) 
@@ -72,5 +78,49 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+      public void AddItem(string itemToAdd) 
+    {
+        int newItemPosition = 0;
+        bool foundSpace = false;
+
+        for(int i = 0; i < itemsHeld.Length; i++)
+        {
+            if(itemsHeld[i] == "" || itemsHeld[i] == itemToAdd) 
+            {
+                newItemPosition  = i;
+                i = itemsHeld.Length;
+                foundSpace = true;
+            }
+        }
+
+        if(foundSpace)
+        {
+            bool itemExists = false;
+            for(int i = 0; i < referenceItems.Length; i++) 
+            {
+                if(referenceItems[i].itemName == itemToAdd)
+                {
+                    itemExists = true;
+
+                    i = referenceItems.Length;
+                }
+            }
+            if(itemExists)
+            {
+                itemsHeld[newItemPosition] = itemToAdd;
+                numberOfItems[newItemPosition]++;
+            } else {
+                Debug.LogError(itemToAdd + "  Does not exist");
+            }
+        }
+        //update the view and sort items
+        GameMenu.instance.ShowItems();
+    }
+
+    public void RemoveItem()
+    {
+
     }
 }
