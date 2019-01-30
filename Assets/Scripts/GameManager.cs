@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
         {
             AddItem("Health Potion");
             AddItem("Bronze Armor");
+
+            RemoveItem("Mana Potion");
+            RemoveItem("Silver Sword");
         }
     }
 
@@ -119,8 +122,34 @@ public class GameManager : MonoBehaviour
         GameMenu.instance.ShowItems();
     }
 
-    public void RemoveItem()
+    public void RemoveItem(string itemToRemove)
     {
+        bool foundItem = false;
+        int itemPosition = 0;
 
+        for(int i=0; i < itemsHeld.Length; i++) 
+        {
+            if(itemsHeld[i] == itemToRemove)
+            {
+                foundItem = true;
+                itemPosition = i;
+                //found item break loop
+                i = itemsHeld.Length;
+
+            }
+
+            if(foundItem)
+            {
+              numberOfItems[itemPosition]--;
+              if(numberOfItems[itemPosition] <= 0)
+              {
+                itemsHeld[itemPosition] = "";
+              }
+               GameMenu.instance.ShowItems();
+            } else {
+                Debug.LogError("coulnt find item: " + itemToRemove);
+            }
+
+        }
     }
 }
