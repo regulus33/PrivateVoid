@@ -197,5 +197,14 @@ public class GameMenu : MonoBehaviour
        itemDescription.text = activeItem.description;
     }
 
+    public void DiscardItem()
+    {
+        Debug.LogError(activeItem + " active item");
+        if(activeItem != null )
+        {
+            GameManager.instance.RemoveItem(activeItem.itemName);
+        }
+    }
+
 
 }
