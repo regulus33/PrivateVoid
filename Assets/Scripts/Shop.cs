@@ -18,6 +18,9 @@ public class Shop : MonoBehaviour
 
     public string[] itemsForSale;
 
+    public ItemButton[] buyItemButtons;
+    public ItemButton[] sellItemButtons;
+
     public bool shopActive;
 
     // Start is called before the first frame update
@@ -56,6 +59,26 @@ public class Shop : MonoBehaviour
     {
         buyMenu.SetActive(true);
         sellMenu.SetActive(false);
+
+        for(int i=0; i < buyItemButtons.Length; i++)
+        {
+            buyItemButtons[i].buttonValue = i;
+            //BUUUUUUG
+            if (itemsForSale[i] != "")
+            {
+                buyItemButtons[i].buttonImage.gameObject.SetActive(true);
+                
+                buyItemButtons[i].buttonImage.sprite = GameManager.instance.GetItemDetails(itemsForSale[i]).itemSprite;
+                
+                buyItemButtons[i].amountText.text = "";
+                
+            } else {
+                buyItemButtons[i].buttonImage.gameObject.SetActive(false);
+                
+                buyItemButtons[i].amountText.text = "";
+            }
+
+        }
 
     }
 
