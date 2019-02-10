@@ -24,10 +24,25 @@ public class ItemButton : MonoBehaviour
 
     public void Press()
     {   
-        //is clicked button containing equipped based on index comparison
-        if(GameManager.instance.itemsHeld[buttonValue] != "")
+        if(GameMenu.instance.theMenu.activeInHierarchy)
         {
-             GameMenu.instance.SelectItem(GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[buttonValue]));
+
+            //is clicked button containing equipped based on index comparison
+            if(GameManager.instance.itemsHeld[buttonValue] != "")
+            {
+                GameMenu.instance.SelectItem(GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[buttonValue]));
+            }
+        }
+        if(Shop.instance.shopMenu.activeInHierarchy)
+        {
+            if(Shop.instance.buyMenu.activeInHierarchy)
+            {
+                Shop.instance.SelectBuyItem(GameManager.instance.GetItemDetails(Shop.instance.itemsForSale[buttonValue]));
+            }
+            if(Shop.instance.sellMenu.activeInHierarchy)
+            {
+
+            }
         }
     }
 }

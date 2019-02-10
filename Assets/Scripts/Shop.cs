@@ -23,6 +23,9 @@ public class Shop : MonoBehaviour
 
     public bool shopActive;
 
+    public Item selectedItem;
+    public Text buyItemName, buyItemDescription, buyItemValue; 
+    public Text sellItemName, sellItemDescription, sellItemValue; 
     // Start is called before the first frame update
     void Start()
     {
@@ -104,6 +107,19 @@ public class Shop : MonoBehaviour
             }
 
         }
+    }
+
+    public void SelectBuyItem(Item buyItem)
+    {
+        selectedItem = buyItem;
+        buyItemName.text = selectedItem.itemName;
+        buyItemDescription.text = selectedItem.description;
+        buyItemValue.text = "Value: " + selectedItem.value;
+    }
+
+    public void SelectSellItem(Item sellItem)
+    {
+
     }
 
 }
