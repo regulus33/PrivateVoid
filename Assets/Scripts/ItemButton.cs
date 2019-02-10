@@ -23,7 +23,8 @@ public class ItemButton : MonoBehaviour
     }
 
     public void Press()
-    {
+    {   
+        Debug.LogError("Pressed!");
         //is clicked button containing equipped based on index comparison
         if(GameManager.instance.itemsHeld[buttonValue] != "")
         {

@@ -57,6 +57,7 @@ public class Shop : MonoBehaviour
 
     public void OpenBuyMenu()
     {
+        Debug.LogError("It was clicked boi");
         buyMenu.SetActive(true);
         sellMenu.SetActive(false);
 
@@ -74,7 +75,7 @@ public class Shop : MonoBehaviour
                 
             } else {
                 buyItemButtons[i].buttonImage.gameObject.SetActive(false);
-                
+
                 buyItemButtons[i].amountText.text = "";
             }
 
