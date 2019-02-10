@@ -119,7 +119,10 @@ public class Shop : MonoBehaviour
 
     public void SelectSellItem(Item sellItem)
     {
-
+        selectedItem = sellItem;
+        sellItemName.text = selectedItem.itemName;
+        sellItemDescription.text = selectedItem.description;
+        sellItemValue.text = "Value: " + Mathf.FloorToInt(selectedItem.value *  .5f).ToString() + "g";
     }
 
 }
