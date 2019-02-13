@@ -314,6 +314,7 @@
 "Assets/Scripts/PickupItem.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PlayerLoader.cs"
+"Assets/Scripts/QuestManager.cs"
 "Assets/Scripts/Shop.cs"
 "Assets/Scripts/ShopKeeper.cs"
 "Assets/Scripts/UIFade.cs"
