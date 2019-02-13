@@ -7,6 +7,7 @@ public class EssentialsLoader : MonoBehaviour
     public GameObject UIScreen;
     public GameObject player;
     public GameObject gameMan;
+    public GameObject playerLoadStart;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class EssentialsLoader : MonoBehaviour
         {
             PlayerController clone = Instantiate(player).GetComponent<PlayerController>();
             PlayerController.instance = clone;
+            PlayerController.instance.transform.position = new Vector3(playerLoadStart.transform.position.y, playerLoadStart.transform.position.x, 0f);
         }
 
         if(GameManager.instance == null)
