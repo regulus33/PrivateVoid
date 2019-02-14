@@ -26,6 +26,8 @@ public class CameraController : MonoBehaviour
     public static CameraController instance;
 
     public float distanceToMove = 0.2f;
+
+    private Vector3 flatPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,8 +52,10 @@ public class CameraController : MonoBehaviour
         if(transitionChangeTarget != null)
         {
             relPos = transitionChangeTarget.transform.position - transform.position;
-            newRot = new Vector3(relPos.x, relPos.y, relPos.z);
-            transform.position = Vector3.MoveTowards(transform.position, transitionChangeTarget.transform.position, distanceToMove);
+            newRot = new Vector3(relPos.x, relPos.y, -10f);
+
+            flatPosition = new Vector3(transitionChangeTarget.transform.position.x, transitionChangeTarget.transform.position.y, -10f);
+            transform.position = Vector3.MoveTowards(transform.position, flatPosition, distanceToMove);
 
         } else {
             transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
