@@ -16,9 +16,20 @@ public class CameraController : MonoBehaviour
     private float halfHeight;
 
     private float halfWidth; 
+
+    public float transitionSpeed;
+    Vector3 newRot;
+    Vector3 relPos;
+
+    private GameObject transitionChangeTarget; 
+
+    public static CameraController instance;
+
+    public float distanceToMove = 0.2f;
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
           //get around script execution order
         target = FindObjectOfType<PlayerController>().transform;
 
@@ -36,10 +47,22 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame after Update
     void LateUpdate()
     {
-       
-            transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+        if(transitionChangeTarget != null)
+        {
+            relPos = transitionChangeTarget.transform.position - transform.position;
+            newRot = new Vector3(relPos.x, relPos.y, relPos.z);
+            transform.position = Vector3.MoveTowards(transform.position, transitionChangeTarget.transform.position, distanceToMove);
 
+        } else {
+            transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
             //keep the camera inside the bounds  mathfunctions.clamp keeps a value between a min and max number so cam position never exceeds boundary
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
+        }
+       
+    }
+
+    public void ChangeTarget(GameObject gameOb)
+    {
+        transitionChangeTarget = gameOb;
     }
 }
