@@ -26,4 +26,10 @@ public class CameraControl : MonoBehaviour
             CameraController.instance.ChangeTarget(cameraFocus);  
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        focusTime = true;
+    }
+
 }
