@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -44,6 +44,16 @@ public class GameManager : MonoBehaviour
 
             RemoveItem("Mana Potion");
             RemoveItem("Silver Sword");
+        }
+
+        if(Input.GetKeyDown(KeyCode.O))
+        {   
+            Debug.Log("o in the game manager, saving all data except quests");
+            SaveData();
+        }
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            LoadData();
         }
     }
 
@@ -155,5 +165,18 @@ public class GameManager : MonoBehaviour
             }
 
         }
+    }
+
+    public void SaveData()
+    {
+        PlayerPrefs.SetString("Current_Scene", SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetFloat("Player_Position_x", PlayerController.instance.transform.position.x);
+        PlayerPrefs.SetFloat("Player_Position_y", PlayerController.instance.transform.position.y);
+        PlayerPrefs.SetFloat("Player_Position_z", PlayerController.instance.transform.position.z);
+    }
+
+    public void LoadData()
+    {
+        PlayerController.instance.transform.position = new Vector3(PlayerPrefs.GetFloat("Player_Position_x"), PlayerPrefs.GetFloat("Player_Position_y"), PlayerPrefs.GetFloat("Player_Position_z"));
     }
 }

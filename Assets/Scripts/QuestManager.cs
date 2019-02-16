@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class QuestManager : MonoBehaviour
 {
     public string[] questMarkerNames;
@@ -117,4 +118,5 @@ public class QuestManager : MonoBehaviour
 
         }
     }
+
 }
