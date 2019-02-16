@@ -43,11 +43,11 @@ public class QuestMarker : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("rannnnnnnnn");
         if(other.tag == "Player")
         {
             if(markOnEnter)
             {
+        Debug.Log("rannnnnnnnn");
                 MarkQuest();
             } else {
                 canMark = true;
