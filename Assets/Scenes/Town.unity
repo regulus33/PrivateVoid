@@ -322,6 +322,9 @@ MonoBehaviour:
   - Eh???
   - Eh???
   isPerson: 1
+  shouldActivateQuest: 1
+  markComplete: 1
+  questToMark: quest test
 --- !u!1 &125356758
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 125356758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.91, y: 10.5, z: 0.021646116}
+  m_LocalPosition: {x: -4.91, y: 11.38, z: 0.021646116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462936808}
@@ -417,7 +420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &286716472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,6 +569,9 @@ MonoBehaviour:
   lines:
   - That way << to Heaven
   isPerson: 0
+  shouldActivateQuest: 0
+  markComplete: 0
+  questToMark: 
 --- !u!61 &393988712
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8085,6 +8091,9 @@ MonoBehaviour:
   lines:
   - Why am I here???
   isPerson: 0
+  shouldActivateQuest: 0
+  markComplete: 0
+  questToMark: 
 --- !u!61 &965490748
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8244,6 +8253,9 @@ MonoBehaviour:
   lines:
   - Welcome to hell!
   isPerson: 0
+  shouldActivateQuest: 0
+  markComplete: 0
+  questToMark: 
 --- !u!1 &1318039762
 GameObject:
   m_ObjectHideFlags: 0
@@ -8278,6 +8290,9 @@ MonoBehaviour:
   - n-Sign Boy
   - I'm a fucking person!
   isPerson: 1
+  shouldActivateQuest: 0
+  markComplete: 0
+  questToMark: 
 --- !u!61 &1318039764
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19371,7 +19386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1869260321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19444,7 +19459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2045733511
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19501,7 +19516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045733510}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.91, y: 10.5, z: 0.021646116}
+  m_LocalPosition: {x: -3.07, y: 10.58, z: 0.021646116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 286716473}

@@ -21,7 +21,7 @@ public class QuestObjectsActivator : MonoBehaviour
     void Update()
     {
         if(!initialCheckDone)
-        {
+        {   //WTF is this here???? figure it out!
             // initialCheckDone = true;
 
             CheckCompletion();

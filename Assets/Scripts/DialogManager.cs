@@ -17,6 +17,11 @@ public class DialogManager : MonoBehaviour
 
     public static DialogManager instance;
 
+    //quest management: 
+    private string questToMark;
+    private bool markQuestComplete; 
+    private bool shouldMarkQuest;
+
     void Start()
     {
         instance = this;
@@ -38,12 +43,27 @@ public class DialogManager : MonoBehaviour
                 {
 
                     currentLine++;
-
+                    // SPEACH IS ENDING 
                     if (currentLine >= dialogLines.Length)
                     {
                         dialogBox.SetActive(false);
 
                         GameManager.instance.dialogActive = false;
+
+                        //is there some quest stuff?
+                        Debug.Log("the last part of the dialog ran");
+                        if(shouldMarkQuest = true)
+                        {
+                            Debug.Log("Should mark quest is true");
+                            shouldMarkQuest = false;
+                            if(markQuestComplete = true)
+                            {
+                                Debug.Log("at this point all control flow has been met");
+                                QuestManager.instance.MarkQuestComplete(questToMark);
+                            } else {
+                                QuestManager.instance.MarkQuestIncomplete(questToMark);
+                            }
+                        }
                     }
                     else
                     {
@@ -87,5 +107,12 @@ public class DialogManager : MonoBehaviour
             nameText.text = dialogLines[currentLine].Replace("n-","");
             currentLine++;
         }
+    }
+
+    public void ShouldActivateQuestAtEnd(string questName, bool markComplete)
+    {
+        shouldMarkQuest = true;
+        questToMark = questName;
+        markQuestComplete = markComplete;
     }
 }
