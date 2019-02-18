@@ -45,6 +45,7 @@ public class GameMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //open and close menu
         if (Input.GetButtonDown("Fire2"))
         {
             if (theMenu.activeInHierarchy)
@@ -60,6 +61,8 @@ public class GameMenu : MonoBehaviour
                 UpdateMainStats();
                 GameManager.instance.gameMenuOpen = true;
             }
+
+            AudioManager.instance.PlaySFX(5);
         }
     }
 
@@ -130,6 +133,7 @@ public class GameMenu : MonoBehaviour
 
     public void OpenStatus() 
     {
+        Debug.LogError("openstats");
         UpdateMainStats();
         //get status of character show and populate
         StatusChar(0);
@@ -140,6 +144,7 @@ public class GameMenu : MonoBehaviour
             statusButtons[i].SetActive(playerStats[i].gameObject.activeInHierarchy);
             statusButtons[i].GetComponentInChildren<Text>().text = playerStats[i].charName;
         }
+
     }
 
     public void StatusChar(int selected) 
@@ -173,6 +178,7 @@ public class GameMenu : MonoBehaviour
 
     public void ShowItems()
     {
+        Debug.LogError("Show items fired");
         GameManager.instance.SortItems();
 
         for(int i=0; i < itemButtons.Length; i++)
@@ -240,6 +246,12 @@ public class GameMenu : MonoBehaviour
     {
         activeItem.Use(selectChar);
         CloseItemCharChoice();
+    }
+
+    public void PlayButtonSound()
+    {
+        Debug.Log("fired!!!");
+        AudioManager.instance.PlaySFX(4);
     }
 
 }
