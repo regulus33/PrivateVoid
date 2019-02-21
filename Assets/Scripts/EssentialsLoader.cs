@@ -9,7 +9,6 @@ public class EssentialsLoader : MonoBehaviour
     public GameObject gameMan;
     public GameObject playerLoadStart;
     public GameObject questMan;
-
     public GameObject audioMan;
     // Start is called before the first frame update
     void Start()
@@ -41,6 +40,7 @@ public class EssentialsLoader : MonoBehaviour
         {
             Instantiate(audioMan);
         }
+
     }
 
     // Update is called once per frame

@@ -8,7 +8,7 @@ public class AreaEntrance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //if player's transition name happens to be this one    
+        //If I am the area entrance object for x area name (there will often be several), then warp player to here
         if (PlayerController.instance.areaTransitionName == transitionName)
         {
             PlayerController.instance.transform.position = transform.position;

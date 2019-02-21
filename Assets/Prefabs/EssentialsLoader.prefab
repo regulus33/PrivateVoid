@@ -47,3 +47,7 @@ MonoBehaviour:
     type: 3}
   player: {fileID: 2659997855958838530, guid: 3fec4df1d86284a78b21ea1a36975b8f, type: 3}
   gameMan: {fileID: 5039055203600621004, guid: 624497f7105734820833cadf8325a3ca, type: 3}
+  playerLoadStart: {fileID: 0}
+  questMan: {fileID: 0}
+  audioMan: {fileID: 0}
+  camCon: {fileID: 0}
