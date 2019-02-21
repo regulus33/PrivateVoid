@@ -26,9 +26,7 @@ public class DialogManager : MonoBehaviour
     {
         instance = this;
         dialogText.text = dialogLines[currentLine];   
-        //disbale on instantiation, need to figure out why the FUCK I can't just disable this in the GUI
-        dialogBox.SetActive(false);
-        GameManager.instance.dialogActive = false;
+ 
     }
 
     // Update is called once per frame

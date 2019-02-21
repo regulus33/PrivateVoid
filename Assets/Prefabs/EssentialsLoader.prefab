@@ -49,5 +49,5 @@ MonoBehaviour:
   gameMan: {fileID: 5039055203600621004, guid: 624497f7105734820833cadf8325a3ca, type: 3}
   playerLoadStart: {fileID: 0}
   questMan: {fileID: 0}
-  audioMan: {fileID: 0}
-  camCon: {fileID: 0}
+  audioMan: {fileID: 7110771366633595495, guid: e7973a4a2da3444b3aa01322d9743acd,
+    type: 3}

@@ -68,8 +68,8 @@ public class CameraController : MonoBehaviour
                 //keep the camera inside the bounds  mathfunctions.clamp keeps a value between a min and max number so cam position never exceeds boundary
                 transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
             }
-
-            if(!musicStarted)
+                                    
+            if(!musicStarted && AudioManager.instance != null)
             {
                 musicStarted = true;
                 AudioManager.instance.PlayMusic(musicToPlay);

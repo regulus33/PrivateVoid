@@ -234,7 +234,7 @@ MonoBehaviour:
   - {fileID: 5039055203131681569}
   - {fileID: 5039055202974295927}
   gameMenuOpen: 0
-  dialogActive: 1
+  dialogActive: 0
   fadingBetweenAreas: 0
   shopActive: 0
   itemsHeld:
