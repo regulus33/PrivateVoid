@@ -26,3 +26,11 @@ nextArea is passed to Unity Scene Manager and nextPosition is stuck to PlayerCon
   }
 ```
 
+## Dialog Management
+
+Dialog manager scripts are attached to the objects they are meant to provide speach for. Two components:
+
+* Dialog Manager - Holds the actual text state and displays / animates it on the gameobjects (text box and name) that you provide as public variables.
+* Dialog Activator - Simpley add this on top of Dialog Manager to trigger an activation of the DialogBox on the DialogManager which sets off the whole click loop of dialog. Listens for on trigger enter. 
+
+To display Names in Dialog Manger, use 'n-'
