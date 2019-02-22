@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
+    public float letterPaused = 0.01f;
     public Text dialogText;
     public Text nameText;
     public GameObject dialogBox;
-    public GameObject nameBox;
-
     public string[] dialogLines;
 
     public int currentLine;
@@ -22,7 +21,7 @@ public class DialogManager : MonoBehaviour
     {
         instance = this;
         dialogText.text = dialogLines[currentLine];   
-        //disbale on instantiation, need to figure out why the FUCK I can't just disable this in the GUI
+        
     }
 
     // Update is called once per frame
@@ -30,7 +29,6 @@ public class DialogManager : MonoBehaviour
     {
         if(dialogBox.activeInHierarchy)
         {
-            //is it being pressed
             if (Input.GetButtonUp("Fire1"))
             {
                 if (!justStarted)
@@ -46,8 +44,8 @@ public class DialogManager : MonoBehaviour
                     else
                     {
                         CheckIfName();
-
-                        dialogText.text = dialogLines[currentLine];
+                        // dialogText.text = dialogLines[currentLine];
+                        StartCoroutine (TypeText(dialogLines[currentLine]));
                     }
 
                 }
@@ -73,17 +71,34 @@ public class DialogManager : MonoBehaviour
 
         justStarted = true;
         //only make little box for people active when person is true(youre talking and not inspecting)
-        nameBox.SetActive(isPerson);
-
     }
 
     public void CheckIfName()
     {   //syntax for my name switching
+        Debug.Log(dialogLines[currentLine].StartsWith("n-"));
+        Debug.Log(dialogLines[currentLine]);
         if (dialogLines[currentLine].StartsWith("n-"))
         {   //this line is not dialog, its the name
             nameText.text = dialogLines[currentLine].Replace("n-","");
             currentLine++;
         }
     }
+    //animation
+    public IEnumerator TypeText(string message)
+    {
+        // wipe text blank before next print
+        dialogText.text = "";
+        //Split each char into a char array
+		foreach (char letter in message.ToCharArray()) 
+		{
+			//Add 1 letter each
+			dialogText.text += letter;
+			yield return 0;
+			yield return new WaitForSeconds(letterPaused);
+		}
+        
+	}
+
+    
 
 }

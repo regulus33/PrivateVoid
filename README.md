@@ -1,24 +1,28 @@
-# At the World’s Edge - technical documentation
-
-# Main components:
-
-## CameraController 
-  	Follows player character location, keeps character inside game map bounds and changes targets for cinematics. 
-
-## UICanvas
-   Has many subcomponents but we attach all the scripts to this object who will control menu, dialog etc. Many of UI Canvases sub scripts will stop player movement based on the SetActive(bool) status of a UICanvas > GameObject.  This var is set on the PlayerController by the GameManager. 
+# RPGZ
 
 
-```c#
-  //GameManager:30
-        if (gameMenuOpen || dialogActive || fadingBetweenAreas || shopActive)
-        {
-            
-            PlayerController.instance.canMove = false;
-        }
-        else
-        {
-            PlayerController.instance.canMove = true;
-        }
+## Traveling between scenes:
+
+Each scene has at least one of: 
+* North 
+* West 
+* South 
+* East 
+
+Tied to an entrance. 
+
+Exit objects have 2 public strings:
+
+* nextArea: Scene to Load
+* nextPosition: Which entrance to Load
+
+
+nextArea is passed to Unity Scene Manager and nextPosition is stuck to PlayerController.instance and retrieved by the area recieving them.
+
 ```
- 
+  private void SetPlayerPosition()
+  {
+    PlayerController.instance.areaTransitionName = nextPosition;
+  }
+```
+
