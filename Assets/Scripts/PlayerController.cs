@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     //because of the static var, player can only be instantiated once(i think)
     public static PlayerController instance;
 
-    public string areaTransitionName;
+    public string nextPosition;
     // Start is called before the first frame update
 
     //character boundaries
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 topRightLimit;
 
     public bool canMove = true;
+
 
 
     void Start()
@@ -72,4 +73,6 @@ public class PlayerController : MonoBehaviour
         bottomLeftLimit = botleft + new Vector3(1f, 1f, 0f);
         topRightLimit = topRight + new Vector3(-1f, -1f, 0f);
     }
+
+
 }

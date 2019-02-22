@@ -69,12 +69,6 @@ public class CameraController : MonoBehaviour
                 transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y), transform.position.z);
             }
                                     
-            if(!musicStarted && AudioManager.instance != null)
-            {
-                musicStarted = true;
-                AudioManager.instance.PlayMusic(musicToPlay);
-            }
-
        
        
     }
