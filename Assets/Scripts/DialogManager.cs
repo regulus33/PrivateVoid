@@ -32,7 +32,7 @@ public class DialogManager : MonoBehaviour
     {
         if(dialogBox.activeInHierarchy)
         {
-           HandleDialog();
+           tickThroughDialog();
         }
 
     }
@@ -63,29 +63,29 @@ public class DialogManager : MonoBehaviour
         
 	}
 
-    private void HandleDialog()
+    private void tickThroughDialog()
     {
+        //is user clicking? and no animation is happening and dialog box is active
          if (Input.GetButtonUp("Fire1") && !typing && dialogBox.activeInHierarchy)
          {
+            // We are at last index, set box false
+            if (currentLine >= dialogLines.Length)
+            {
+                dialogBox.SetActive(false);
+                PlayerController.instance.canMove = true;
+                currentLine = 0;
 
-                currentLine++;
-                // SPEACH IS ENDING 
-                if (currentLine >= dialogLines.Length)
-                {
-                    dialogBox.SetActive(false);
-                    PlayerController.instance.canMove = true;
-                    currentLine = 0;
-
-                }
-                else
-                {
-                    CheckIfName();
-                    // dialogText.text = dialogLines[currentLine];
-                    StartCoroutine (TypeText(dialogLines[currentLine]));
-                }
-
-             
             }
+            // we are still deep in the dialog loop, check if name and type lines!
+            else
+            {
+                CheckIfName();
+                // dialogText.text = dialogLines[currentLine];
+                StartCoroutine (TypeText(dialogLines[currentLine]));
+            }
+
+             currentLine++;
+        }
     }
 
     
