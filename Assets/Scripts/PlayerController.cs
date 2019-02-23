@@ -74,5 +74,10 @@ public class PlayerController : MonoBehaviour
         topRightLimit = topRight + new Vector3(-1f, -1f, 0f);
     }
 
+    public void ToggleMovement()
+    {
+        canMove = !canMove;
+    }
+
 
 }

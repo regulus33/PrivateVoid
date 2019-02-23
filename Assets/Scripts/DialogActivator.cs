@@ -22,9 +22,20 @@ public class DialogActivator : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-       triggerDialog = true;
+       Debug.Log(collision.tag);
+       if(collision.tag =="Player")
+       {
+        triggerDialog = true;
+       }
     }
-    
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+       if(collision.tag =="Player")
+       {
+        triggerDialog = false;
+       }
+    }
 
     private bool ShouldShowDialog()
     {
@@ -38,6 +49,7 @@ public class DialogActivator : MonoBehaviour
     private void ActivateDialog()
     {
         DialogManager.instance.dialogBox.SetActive(true);
+        PlayerController.instance.canMove = false;
     }
 
 }

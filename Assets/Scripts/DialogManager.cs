@@ -8,13 +8,16 @@ public class DialogManager : MonoBehaviour
     public float letterPaused = 0.01f;
     public Text dialogText;
     public Text nameText;
+    public bool isPerson;
     public GameObject dialogBox;
     public string[] dialogLines;
 
-    public int currentLine;
+    public int currentLine = 0;
     public bool justStarted;
 
     public static DialogManager instance;
+    //dont let user input while typing.
+    private bool typing = false;
 
 
     void Start()
@@ -29,54 +32,13 @@ public class DialogManager : MonoBehaviour
     {
         if(dialogBox.activeInHierarchy)
         {
-            if (Input.GetButtonUp("Fire1"))
-            {
-                if (!justStarted)
-                {
-
-                    currentLine++;
-                    // SPEACH IS ENDING 
-                    if (currentLine >= dialogLines.Length)
-                    {
-                        dialogBox.SetActive(false);
-
-                    }
-                    else
-                    {
-                        CheckIfName();
-                        // dialogText.text = dialogLines[currentLine];
-                        StartCoroutine (TypeText(dialogLines[currentLine]));
-                    }
-
-                }
-                else
-                {
-                    justStarted = false;
-                }
-            }
+           HandleDialog();
         }
 
     }
 
-    public void ShowDialog(string[] newLines, bool isPerson)
-    {
-        dialogLines = newLines;
-
-        currentLine = 0;
-
-        CheckIfName();
-
-        dialogText.text = dialogLines[currentLine];
-        dialogBox.SetActive(true);
-
-        justStarted = true;
-        //only make little box for people active when person is true(youre talking and not inspecting)
-    }
-
     public void CheckIfName()
     {   //syntax for my name switching
-        Debug.Log(dialogLines[currentLine].StartsWith("n-"));
-        Debug.Log(dialogLines[currentLine]);
         if (dialogLines[currentLine].StartsWith("n-"))
         {   //this line is not dialog, its the name
             nameText.text = dialogLines[currentLine].Replace("n-","");
@@ -86,6 +48,7 @@ public class DialogManager : MonoBehaviour
     //animation
     public IEnumerator TypeText(string message)
     {
+        typing = true;
         // wipe text blank before next print
         dialogText.text = "";
         //Split each char into a char array
@@ -96,8 +59,34 @@ public class DialogManager : MonoBehaviour
 			yield return 0;
 			yield return new WaitForSeconds(letterPaused);
 		}
+         typing = false;
         
 	}
+
+    private void HandleDialog()
+    {
+         if (Input.GetButtonUp("Fire1") && !typing && dialogBox.activeInHierarchy)
+         {
+
+                currentLine++;
+                // SPEACH IS ENDING 
+                if (currentLine >= dialogLines.Length)
+                {
+                    dialogBox.SetActive(false);
+                    PlayerController.instance.canMove = true;
+                    currentLine = 0;
+
+                }
+                else
+                {
+                    CheckIfName();
+                    // dialogText.text = dialogLines[currentLine];
+                    StartCoroutine (TypeText(dialogLines[currentLine]));
+                }
+
+             
+            }
+    }
 
     
 
