@@ -11,8 +11,8 @@ public class DialogManager : MonoBehaviour
     public bool isPerson;
     public GameObject dialogBox;
     public string[] dialogLines;
-
-    public int currentLine = 0;
+    public int voiceSound = 0;
+    private int currentLine = 0;
     public bool justStarted;
 
     public static DialogManager instance;
@@ -54,6 +54,7 @@ public class DialogManager : MonoBehaviour
         //Split each char into a char array
 		foreach (char letter in message.ToCharArray()) 
 		{
+            AudioManager.instance.PlayVox(voiceSound);
 			//Add 1 letter each
 			dialogText.text += letter;
 			yield return 0;
