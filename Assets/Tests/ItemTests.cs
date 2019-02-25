@@ -10,11 +10,18 @@ namespace Tests
     {
         // A Test behaves as an ordinary method
         [Test]
-        public void ItemTestsSimplePasses()
+        public void Add_Item_Adds_Self_To_Player_Items()
         {
+            var player = new GameObject().AddComponent<PlayerController>();
             var item = new GameObject().AddComponent<Item>();
-            var itemTestedMethod = GameObject.Instantiate(item).JustForTest(3);
-            Assert.AreEqual(9, itemTestedMethod);
+            var initialListCount = player.itemLlist.Count;
+            PlayerController.instance = GameObject.Instantiate(player);
+            Item.instance = GameObject.Instantiate(item); 
+            item.itemType = "PillBottle";
+            item.PickupItem();
+
+            Assert.Greater(PlayerController.instance.itemLlist.Count, initialListCount);
+            
         }
 
        

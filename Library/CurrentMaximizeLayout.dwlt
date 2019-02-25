@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 680
-  m_MinSize: {x: 715, y: 522}
-  m_MaxSize: {x: 22012, y: 18072}
+  m_MinSize: {x: 711, y: 498}
+  m_MaxSize: {x: 22008, y: 18048}
   vertical: 1
-  controlID: 15
+  controlID: 567
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -126,10 +126,10 @@ MonoBehaviour:
     y: 0
     width: 1280
     height: 447
-  m_MinSize: {x: 715, y: 398}
-  m_MaxSize: {x: 22012, y: 14048}
+  m_MinSize: {x: 711, y: 374}
+  m_MaxSize: {x: 22008, y: 14024}
   vertical: 0
-  controlID: 74
+  controlID: 568
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -151,10 +151,10 @@ MonoBehaviour:
     y: 0
     width: 1003
     height: 447
-  m_MinSize: {x: 440, y: 398}
-  m_MaxSize: {x: 18010, y: 14048}
+  m_MinSize: {x: 436, y: 374}
+  m_MaxSize: {x: 18006, y: 14024}
   vertical: 1
-  controlID: 119
+  controlID: 494
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -203,10 +203,10 @@ MonoBehaviour:
     y: 173
     width: 1003
     height: 274
-  m_MinSize: {x: 440, y: 274}
-  m_MaxSize: {x: 18010, y: 10024}
+  m_MinSize: {x: 436, y: 274}
+  m_MaxSize: {x: 18006, y: 10024}
   vertical: 0
-  controlID: 120
+  controlID: 495
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,8 +226,8 @@ MonoBehaviour:
     y: 0
     width: 483
     height: 274
-  m_MinSize: {x: 232, y: 274}
-  m_MaxSize: {x: 10002, y: 10024}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
@@ -271,20 +271,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: /Users/zacharyrowden/rpg-z
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 7}
-    m_SelectedIDs: 8a090000
-    m_LastClickedID: 2442
-    m_ExpandedIDs: 000000008a090000ca0c0000802b000000ca9a3b
+    m_SelectedIDs: ca0c0000
+    m_LastClickedID: 3274
+    m_ExpandedIDs: 000000008c090000ca0c0000802b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -312,7 +312,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008a090000ca0c0000802b0000
+    m_ExpandedIDs: 000000008c090000ca0c0000802b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 00000000d89100001a950000140b0000540b00006c6500003e76000042760000d2830000f69b000092640100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -364,7 +364,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 1089.5}
     m_GridSize: 96
   m_DirectoriesAreaWidth: 306
 --- !u!114 &9
@@ -459,9 +459,9 @@ MonoBehaviour:
     - id: '[rpg-z][suite]'
       name: rpg-z
       fullName: rpg-z
-      resultStatus: 1
-      duration: 0.1147682
-      messages: 
+      resultStatus: 2
+      duration: 319.27002
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -473,9 +473,9 @@ MonoBehaviour:
     - id: '[/Users/zacharyrowden/rpg-z/Library/ScriptAssemblies/EditTests.dll][suite]'
       name: EditTests.dll
       fullName: /Users/zacharyrowden/rpg-z/Library/ScriptAssemblies/EditTests.dll
-      resultStatus: 1
-      duration: 0.0724079
-      messages: 
+      resultStatus: 2
+      duration: 319.20187
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -487,9 +487,9 @@ MonoBehaviour:
     - id: '[Tests][suite]'
       name: Tests
       fullName: Tests
-      resultStatus: 1
-      duration: 0.0524476
-      messages: 
+      resultStatus: 2
+      duration: 319.17487
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -501,9 +501,9 @@ MonoBehaviour:
     - id: '[EditTests][Tests.ItemTests][suite]'
       name: ItemTests
       fullName: Tests.ItemTests
-      resultStatus: 1
-      duration: 0.0053923
-      messages: 
+      resultStatus: 2
+      duration: 318.78378
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -515,11 +515,17 @@ MonoBehaviour:
     - id: '[EditTests][Tests.ItemTests.ItemTestsSimplePasses]'
       name: ItemTestsSimplePasses
       fullName: Tests.ItemTests.ItemTestsSimplePasses
-      resultStatus: 1
-      duration: 0.0006511
-      messages: 
+      resultStatus: 2
+      duration: 318.63968
+      messages: 'System.NullReferenceException : Object reference not set to an instance
+        of an object'
       output: 
-      stacktrace: 
+      stacktrace: "  at Item.PickupItem () [0x00001] in /Users/zacharyrowden/rpg-z/Assets/Scripts/Item.cs:40
+        \n  at Tests.ItemTests.ItemTestsSimplePasses () [0x00017] in /Users/zacharyrowden/rpg-z/Assets/Tests/ItemTests.cs:18
+        \n  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)\n
+        \ at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
+        culture) [0x00032] in <ac823e2bb42b41bda67924a45a0173c3>:0 "
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -531,7 +537,7 @@ MonoBehaviour:
       name: PlayerControllerTests
       fullName: Tests.PlayerControllerTests
       resultStatus: 1
-      duration: 0.0391754
+      duration: 0.3726374
       messages: 
       output: 
       stacktrace: 
@@ -545,7 +551,7 @@ MonoBehaviour:
       name: AddItemReturnsFalseIfInvalid
       fullName: Tests.PlayerControllerTests.AddItemReturnsFalseIfInvalid
       resultStatus: 1
-      duration: 0.0010282
+      duration: 0.0279067
       messages: 
       output: 
       stacktrace: 
@@ -560,7 +566,7 @@ MonoBehaviour:
       name: AddItemReturnsTrue
       fullName: Tests.PlayerControllerTests.AddItemReturnsTrue
       resultStatus: 1
-      duration: 0.0004714
+      duration: 0.0016294
       messages: 
       output: 
       stacktrace: 
@@ -571,7 +577,11 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[EditTests][Tests.PlayerControllerTests][suite]'
-    m_ResultText: Tests (0.052s)
+    m_ResultText: 'Tests (319.175s)
+
+      ---
+
+      One or more child tests had errors'
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
@@ -622,8 +632,8 @@ MonoBehaviour:
     y: 0
     width: 104
     height: 274
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 104, y: 124}
+  m_MaxSize: {x: 4004, y: 4024}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -814,7 +824,7 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 274}
   m_MaxSize: {x: 4002, y: 8024}
   vertical: 1
-  controlID: 75
+  controlID: 569
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -957,7 +967,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 124}
   m_MaxSize: {x: 8004, y: 4024}
   vertical: 0
-  controlID: 16
+  controlID: 446
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1067,7 +1077,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 80f2ffffe4f2ffff48f3ffffacf3ffff14f4ffff98f4ffff70f5ffffccf5ffff2cf6ffff8cf6ffffecf6ffff4cf7ffffacf7ffff0cf8ffff6cf9ffffc4f9ffff1cfaffff1afbffffd4fbffff
+      m_ExpandedIDs: 12f8ffffd4fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

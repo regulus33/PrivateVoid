@@ -10,7 +10,7 @@ namespace Tests
     {
         // A Test behaves as an ordinary method
         [Test]
-        public void AddItemReturnsTrue()
+        public void Add_Item_Returns_True()
         {
             var player = new GameObject().AddComponent<PlayerController>();
             player.gameObject.AddComponent<Rigidbody2D>();
@@ -19,7 +19,7 @@ namespace Tests
         }
 
         [Test]
-        public void AddItemReturnsFalseIfInvalid()
+        public void Add_Item_Returns_False_If_Invalid()
         {
             var player = new GameObject().AddComponent<PlayerController>();
             player.gameObject.AddComponent<Rigidbody2D>();
@@ -27,14 +27,5 @@ namespace Tests
             Assert.AreEqual(false, itemAdded);
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        // [UnityTest]
-        // public IEnumerator NewTestScriptWithEnumeratorPasses()
-        // {
-        //     // Use the Assert class to test conditions.
-        //     // Use yield to skip a frame.
-        //     yield return null;
-        // }
     }
 }

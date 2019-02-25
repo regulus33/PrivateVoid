@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public string itemType = "thing";
+    public string itemType;
     public bool used;
     // Start is called before the first frame update
+    public static Item instance;
+
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -20,13 +22,8 @@ public class Item : MonoBehaviour
 
     void OntriggerEnter2D(Collider2D collision) 
     {
-        if(collision.tag == "Player")
-        {
-            if(PlayerController.instance.AddItem(itemType));
-            {
-                used = true;
-            }
-        }
+       if(Input.GetKeyUp("Fire1") && collision.tag == "Player")  
+        PickupItem();
     }
 
     void OntriggerExit2D()
@@ -37,8 +34,14 @@ public class Item : MonoBehaviour
         }
     }
 
-    public int JustForTest(int argument)
+    public void PickupItem()
     {
-        return argument * 3;
+       
+        if(PlayerController.instance.AddItem(itemType))
+        {
+            used = true;
+        }
+        
+
     }
 }
