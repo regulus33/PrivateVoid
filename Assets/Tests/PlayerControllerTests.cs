@@ -27,5 +27,16 @@ namespace Tests
             Assert.AreEqual(false, itemAdded);
         }
 
+        [Test]
+
+        public void Item_Is_Destroyed_Once_Used()
+        {
+            var player = new GameObject().AddComponent<PlayerController>();
+            player.gameObject.AddComponent<Rigidbody2D>();
+            var itemAdded = GameObject.Instantiate(player).AddItem("NotAnItem");
+            
+            // Assert.AreEqual(false, itemAdded);
+
+        }
     }
 }

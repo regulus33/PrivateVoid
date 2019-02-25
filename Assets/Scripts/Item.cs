@@ -5,10 +5,10 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public string itemType;
-    public bool used;
     // Start is called before the first frame update
     public static Item instance;
 
+    private bool canPickUp;
     void Start()
     {
         instance = this;
@@ -17,31 +17,32 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void OntriggerEnter2D(Collider2D collision) 
-    {
-       if(Input.GetKeyUp("Fire1") && collision.tag == "Player")  
-        PickupItem();
-    }
-
-    void OntriggerExit2D()
-    {
-        if(used)
+        if(canPickUp)
         {
-            gameObject.SetActive(false);
+
+            PickupItem();
         }
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+       if(collision.tag == "Player")
+       {
+           canPickUp = true;
+       }
+    }
+
 
     public void PickupItem()
     {
-       
+        Debug.Log("ran");
         if(PlayerController.instance.AddItem(itemType))
         {
-            used = true;
+            RemoveItem();
         }
-        
+    }
 
+    public void RemoveItem()
+    {
+        gameObject.SetActive(false);
     }
 }

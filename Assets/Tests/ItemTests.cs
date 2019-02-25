@@ -24,6 +24,20 @@ namespace Tests
             
         }
 
+        [Test]
+        public void Item_Is_Destroyed_Once_Used()
+        {
+            var player = new GameObject().AddComponent<PlayerController>();
+            var item = new GameObject().AddComponent<Item>();
+            PlayerController.instance = GameObject.Instantiate(player);
+            Item.instance = GameObject.Instantiate(item); 
+            item.itemType = "PorkChop";
+            item.PickupItem();
+
+            Assert.AreEqual(false, item.gameObject.activeInHierarchy);
+
+        }
+
        
     }
 }
