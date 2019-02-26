@@ -17,9 +17,12 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canPickUp)
+        if(canPickUp && Input.GetButtonDown("Fire1"))
         {
-
+           ShowDialog();
+        }
+        if(InventoryManager.instance.dialogShown)
+        {
             PickupItem();
         }
     }
@@ -31,7 +34,6 @@ public class Item : MonoBehaviour
        }
     }
 
-
     public void PickupItem()
     {
         Debug.Log("ran");
@@ -39,6 +41,12 @@ public class Item : MonoBehaviour
         {
             RemoveItem();
         }
+    }
+
+    public void ShowDialog()
+    {
+        InventoryManager.instance.dialogBox.SetActive(true);
+        PlayerController.instance.canMove = false;
     }
 
     public void RemoveItem()
