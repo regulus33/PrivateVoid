@@ -24,6 +24,7 @@ public class Item : MonoBehaviour
         if(InventoryManager.instance.dialogShown)
         {
             PickupItem();
+            AudioManager.instance.PlaySFX(0);
         }
     }
     void OnTriggerEnter2D(Collider2D collision)
