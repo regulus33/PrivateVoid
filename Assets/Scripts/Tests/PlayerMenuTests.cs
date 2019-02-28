@@ -53,6 +53,19 @@ namespace Tests
             Assert.AreEqual(PlayerData.instance.withdrawal.ToString(), PlayerMenu.instance.withdrawText.text);
 
         }
+        [Test]
+        public void First_Toggle_Resolves_True()
+        {
+            var uiCanvas = new GameObject().AddComponent<PlayerMenu>();
+
+             uiCanvas.gameObject.AddComponent<Canvas>();
+
+             PlayerMenu.instance = GameObject.Instantiate(uiCanvas);
+
+            PlayerMenu.instance.ToggleMenu();
+
+            Assert.AreEqual(true, PlayerMenu.instance.shouldAssemble);
+        }
     
     }
 }

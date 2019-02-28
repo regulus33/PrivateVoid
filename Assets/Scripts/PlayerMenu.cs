@@ -12,7 +12,7 @@ public class PlayerMenu : MonoBehaviour
 
     public GameObject theMenu;
 
-    private bool shouldAssemble = false;
+    public bool shouldAssemble = false;
     public static PlayerMenu instance;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class PlayerMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire2"))
+        if(Input.GetButtonDown("Fire1"))
         {
             ToggleMenu();
             Assemble();
@@ -63,7 +63,7 @@ public class PlayerMenu : MonoBehaviour
         theMenu.SetActive(shouldAssemble);
     }
 
-    private void ToggleMenu()
+    public void ToggleMenu()
     {
         Debug.Log("toggleing");
         shouldAssemble = !shouldAssemble;
