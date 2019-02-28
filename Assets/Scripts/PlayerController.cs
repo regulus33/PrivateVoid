@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove = true;
 
-    public List<string> itemLlist = new List<string>();
+    
 
     void Start()
     {
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
     {
         if(ValidateItem(item))
         {
-            itemLlist.Add(item);
+            PlayerData.instance.itemList.Add(item);
             return true;
         }
         return false;
