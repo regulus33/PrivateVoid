@@ -1,8 +1,7 @@
+ <img src="./project-logo.png" width="604"/>
 
 
-<img src="./project-logo.png" width="404" height="200"/>
-
-# A 2d rpg about our inner world. The Private Void
+# 1 d33p Game
 
 ## Dev Docs:
 
