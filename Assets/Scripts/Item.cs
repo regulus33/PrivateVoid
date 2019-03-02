@@ -37,7 +37,6 @@ public class Item : MonoBehaviour
 
     public void PickupItem()
     {
-        Debug.Log("ran");
         if(PlayerController.instance.AddItem(itemType))
         {
             RemoveItem();
