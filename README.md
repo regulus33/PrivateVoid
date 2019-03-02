@@ -1,5 +1,8 @@
-# RPGZ
+![Private Void](./project-logo.png?raw=true "PrivateVoid")
 
+# A 2d rpg about our inner world. The Private Void
+
+## Dev Docs:
 
 ## Traveling between scenes:
 
