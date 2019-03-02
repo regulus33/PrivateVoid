@@ -19,10 +19,10 @@ public class ItemMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+           PopulateItems();
     }
 
-    public GameObject[] PopulateItems()
+    public GameObject[] ExtractUIItems()
     {
         int childCount = items.transform.childCount;
         GameObject[] itemsChildren = new GameObject[childCount];
@@ -33,6 +33,13 @@ public class ItemMenu : MonoBehaviour
         
         return itemsChildren;
     }
-}
 
-            // itemToModify.GetComponent<UnityEngine.UI.Text>().text =  
+    public void PopulateItems()
+    {
+        GameObject[] itemsToModify = ExtractUIItems();   
+        for(int i=0; i < PlayerData.instance.itemList.Count; i++)
+        {
+            itemsToModify[i].GetComponent<UnityEngine.UI.Text>().text = PlayerData.instance.itemList[i];
+        }
+    }
+}
