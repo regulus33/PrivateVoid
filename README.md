@@ -1,4 +1,6 @@
-![Private Void](./project-logo.png?raw=true "PrivateVoid")
+
+
+<img src="./project-logo.png" width="404" height="200"/>
 
 # A 2d rpg about our inner world. The Private Void
 
