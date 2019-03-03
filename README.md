@@ -1,7 +1,7 @@
  <img src="./project-logo.png" width="604"/>
 
 
-# --------- E N T E R || T H E || V O I D --------------------
+--E N T E R || T H E || V O I D --
 
 ## Dev Docs:
 
