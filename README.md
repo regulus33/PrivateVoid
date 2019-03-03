@@ -3,7 +3,7 @@
 
 --E N T E R || T H E || V O I D --
 
-# Docs:
+# The DOCS
 
 ## Traveling between scenes:
 
