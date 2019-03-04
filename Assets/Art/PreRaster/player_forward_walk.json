@@ -1,0 +1,35 @@
+{ "frames": [
+   {
+    "filename": "player_forward_walk 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 17, "h": 28 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 17, "h": 28 },
+    "sourceSize": { "w": 17, "h": 28 },
+    "duration": 100
+   },
+   {
+    "filename": "player_forward_walk 1.aseprite",
+    "frame": { "x": 0, "y": 28, "w": 17, "h": 28 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 17, "h": 28 },
+    "sourceSize": { "w": 17, "h": 28 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.9",
+  "format": "RGBA8888",
+  "size": { "w": 128, "h": 128 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer 0", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
