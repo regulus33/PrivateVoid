@@ -8,18 +8,22 @@ public class ItemMenu : MonoBehaviour
     //this is not data this is a socket to put the data in, we will loop through premade ui elements that child this gameobject and populate them with item strings.
     public GameObject items;
 
+    public GameObject menuDisplay;
+
     public static ItemMenu instance;
+
+    private bool shouldShow = false;
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        PopulateItems();
+ 
     }
 
     // Update is called once per frame
     void Update()
     {
-           PopulateItems();
+        showMenu();
     }
 
     public GameObject[] ExtractUIItems()
@@ -32,6 +36,16 @@ public class ItemMenu : MonoBehaviour
         }
         
         return itemsChildren;
+    }
+    
+    public void showMenu()
+    {
+        if(Input.GetButtonDown("Fire2") || Input.GetKeyDown(KeyCode.M))
+        {
+            //flip should show bool
+            shouldShow = !shouldShow;
+            menuDisplay.SetActive(shouldShow);
+        }
     }
 
     public void PopulateItems()
