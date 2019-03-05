@@ -37,6 +37,8 @@ Dialog manager scripts are attached to the objects they are meant to provide spe
 To display Names in Dialog Manger, use 'n-'
 
 ## Items menu
+* Don't forget to assign the UI panel child of ItemMenu to the script!!!
+
 For now Items menu is a UI object with a child GameObject with panels and buttons etc. To interact with the items menu use right click or tap "M" on keyboard. 
 
 The main thing here to document is that items takes a 
@@ -77,3 +79,6 @@ will
 a) drill down into the children of the items gameobject and gran the Text items we need to inject text into and
 b) pull data from the PlayerData object and inject that into those Item Text boys. 
 
+
+## Items! Adding and Using etc. 
+This one is complicated and can certainly be improved but here's what we have so far.
