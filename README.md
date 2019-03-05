@@ -81,4 +81,17 @@ b) pull data from the PlayerData object and inject that into those Item Text boy
 
 
 ## Items! Adding and Using etc. 
-This one is complicated and can certainly be improved but here's what we have so far.
+This one is complicated and can certainly be improved but here's what we have so far:
+When picking up an Item, the method for this is on the item itself. 
+
+```C#
+ public void PickupItem()
+    {
+        if(PlayerController.instance.AddItem(itemType))
+        {
+            RemoveItem();
+        }
+    }
+```
+
+This is where shit gets tangled :( you then call PlayerController's AddItem() and after a succesfull action you Remove it. 
