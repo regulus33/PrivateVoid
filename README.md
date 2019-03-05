@@ -1,9 +1,6 @@
  <img src="./project-logo.png" width="604"/>
 
-
---E N T E R || T H E || V O I D --
-
-# The DOCS
+#Z-DOCS 
 
 ## Traveling between scenes:
 
