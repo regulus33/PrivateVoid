@@ -47,11 +47,11 @@ public class PlayerData : MonoBehaviour
 
     public void UseItem(string itemName)
     {
-        if(itemName == "PorkChop")
+        if(itemName == "pork_chop")
         {
             addHp(porkChopImpact);
         }
-        if(itemName == "PillBottle")
+        if(itemName == "pill_bottle")
         {
             deferWithdrawal(intWithdrawalImpact);
         }

@@ -45,15 +45,22 @@ public class ItemMenu : MonoBehaviour
             //flip should show bool
             shouldShow = !shouldShow;
             menuDisplay.SetActive(shouldShow);
+            PopulateItems();
         }
     }
 
     public void PopulateItems()
     {
+
         GameObject[] itemsToModify = ExtractUIItems();   
         for(int i=0; i < PlayerData.instance.itemList.Count; i++)
         {
-            itemsToModify[i].GetComponent<UnityEngine.UI.Text>().text = PlayerData.instance.itemList[i];
+            itemsToModify[i].GetComponent<UnityEngine.UI.Text>().text = DisplayText(PlayerData.instance.itemList[i]);
         }
+    }
+
+    private string DisplayText(string itemName)
+    {
+        return itemName.Replace("_", " ");
     }
 }

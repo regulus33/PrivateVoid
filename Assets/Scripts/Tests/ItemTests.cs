@@ -26,7 +26,7 @@ namespace Tests
 
             Item.instance = GameObject.Instantiate(item); 
 
-            item.itemType = "PillBottle";
+            item.itemType = "pill_bottle";
 
             item.PickupItem();
 
@@ -45,7 +45,7 @@ namespace Tests
 
             Item.instance = GameObject.Instantiate(item); 
 
-            item.itemType = "PorkChop";
+            item.itemType = "pork_chop";
 
             item.PickupItem();
 

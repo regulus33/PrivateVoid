@@ -14,7 +14,7 @@ namespace Tests
         {
             var player = new GameObject().AddComponent<PlayerController>();
             player.gameObject.AddComponent<Rigidbody2D>();
-            var itemAdded = GameObject.Instantiate(player).AddItem("PorkChop");
+            var itemAdded = GameObject.Instantiate(player).AddItem("pork_chop");
             Assert.AreEqual(true, itemAdded);
         }
 
@@ -23,7 +23,7 @@ namespace Tests
         {
             var player = new GameObject().AddComponent<PlayerController>();
             player.gameObject.AddComponent<Rigidbody2D>();
-            var itemAdded = GameObject.Instantiate(player).AddItem("NotAnItem");
+            var itemAdded = GameObject.Instantiate(player).AddItem("not_an_item");
             Assert.AreEqual(false, itemAdded);
         }
 
@@ -33,7 +33,7 @@ namespace Tests
         {
             var player = new GameObject().AddComponent<PlayerController>();
             player.gameObject.AddComponent<Rigidbody2D>();
-            var itemAdded = GameObject.Instantiate(player).AddItem("NotAnItem");
+            var itemAdded = GameObject.Instantiate(player).AddItem("not_an_item");
             
             // Assert.AreEqual(false, itemAdded);
 

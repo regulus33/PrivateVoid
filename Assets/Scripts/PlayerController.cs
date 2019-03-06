@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
 
     public bool ValidateItem(string item)
     {
-        return item == "PillBottle" || item == "PorkChop" || item == "Incense";
+        return item == "pill_bottle" || item == "pork_chop" || item == "incense";
     }
 
 }

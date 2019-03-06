@@ -14,7 +14,7 @@ namespace Tests
         {
             var playerData = new GameObject().AddComponent<PlayerData>();
             playerData.hp = 0;
-            playerData.UseItem("PorkChop");
+            playerData.UseItem("pork_chop");
 
             Assert.AreEqual(playerData.hp, playerData.porkChopImpact);
         }

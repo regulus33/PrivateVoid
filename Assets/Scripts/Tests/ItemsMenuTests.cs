@@ -51,16 +51,26 @@ namespace Tests
             childOfItems.gameObject.transform.parent = ItemMenu.instance.items.transform;
             //add a player item
             var player = new GameObject().AddComponent<PlayerController>();
-            player.gameObject.AddComponent<Rigidbody2D>();
-            var playerInstance = GameObject.Instantiate(player);
-            playerInstance.AddItem("PorkChop");
+
+            var playerData = new GameObject().AddComponent<PlayerData>();
+
+            PlayerData.instance = playerData;
+
+            // player.gameObject.AddComponent<Rigidbody2D>();
+            var dataInstance = GameObject.Instantiate(playerData);
+            var playerInstance = GameObject.Instantiate(player).AddItem("pork_chop");
+            
+
+            var itemText = ItemMenu.instance.items.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text;
+            
+           Assert.AreEqual("pork chop", "pork chop");
 
             // playerInstance
             // ItemMenu.instance.
 
             //SETUP FINALLLLY DONE, need to put this shit in methods.
 
-
+            
 
 
 
