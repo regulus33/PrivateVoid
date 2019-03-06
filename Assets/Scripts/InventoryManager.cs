@@ -33,14 +33,7 @@ public class InventoryManager : MonoBehaviour
         }
 
     }
-
-    public void CheckIfName()
-    {   //syntax for my name switching
-        if (dialogLines[currentLine].StartsWith("n-"))
-        {   //this line is not dialog, its the name
-            currentLine++;
-        }
-    }
+  
     //animation
     public IEnumerator TypeText(string message)
     {
@@ -76,7 +69,6 @@ public class InventoryManager : MonoBehaviour
             // we are still deep in the dialog loop, check if name and type lines!
             else
             {
-                CheckIfName();
                 // itemText.text = dialogLines[currentLine];
                 StartCoroutine (TypeText(dialogLines[currentLine]));
             }

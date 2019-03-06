@@ -8,7 +8,7 @@ public class Item : MonoBehaviour
     // Start is called before the first frame update
     public static Item instance;
 
-    private bool canPickUp;
+
     void Start()
     {
         instance = this;
@@ -17,30 +17,7 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canPickUp && Input.GetButtonDown("Fire1"))
-        {
-           ShowDialog();
-        }
-        if(InventoryManager.instance.dialogShown)
-        {
-            PickupItem();
-            AudioManager.instance.PlaySFX(0);
-        }
-    }
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-       if(collision.tag == "Player")
-       {
-           canPickUp = true;
-       }
-    }
-
-    public void PickupItem()
-    {
-        if(PlayerController.instance.AddItem(itemType))
-        {
-            RemoveItem();
-        }
+       
     }
 
     public void ShowDialog()
@@ -49,8 +26,4 @@ public class Item : MonoBehaviour
         PlayerController.instance.canMove = false;
     }
 
-    public void RemoveItem()
-    {
-        gameObject.SetActive(false);
-    }
 }

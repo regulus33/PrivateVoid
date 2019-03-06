@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove = true;
 
-    
 
     void Start()
     {
@@ -93,5 +92,6 @@ public class PlayerController : MonoBehaviour
     {
         return item == "pill_bottle" || item == "pork_chop" || item == "incense";
     }
+
 
 }
