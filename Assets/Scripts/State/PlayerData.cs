@@ -35,6 +35,7 @@ public class PlayerData : MonoBehaviour
         {
             hp += hpToAdd;
         }
+        
     }
 
     public void deferWithdrawal(int amount)

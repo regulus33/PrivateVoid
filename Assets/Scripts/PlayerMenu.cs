@@ -32,6 +32,7 @@ public class PlayerMenu : MonoBehaviour
 
     public void updateHP()
     {
+        
         hpText.text = PlayerData.instance.hp.ToString(); 
     }
 

@@ -63,4 +63,24 @@ public class ItemMenu : MonoBehaviour
     {
         return itemName.Replace("_", " ");
     }
+
+    public void Press(GameObject item)
+    {
+     string text = item.GetComponent<UnityEngine.UI.Text>().text;
+     string itemId = MakeComputerFormat(text);
+     PlayerData.instance.UseItem(itemId);
+     //update menu with new stats.
+     PlayerMenu.instance.Assemble();
+     RemoveItem(item);
+
+    }
+
+    public void RemoveItem(GameObject item){
+        item.GetComponent<UnityEngine.UI.Text>().text = "";
+    }
+
+    public string MakeComputerFormat(string name)
+    {
+        return name.Replace(" ","_");
+    }
 }

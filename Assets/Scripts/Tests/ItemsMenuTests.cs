@@ -77,6 +77,19 @@ namespace Tests
 
         }
 
+        [Test]
+
+        public void Has_A_Working_String_Sanitizer()
+        {
+            var uiCanvas = new GameObject().AddComponent<ItemMenu>();
+
+            uiCanvas.gameObject.AddComponent<Canvas>();
+
+            ItemMenu.instance = GameObject.Instantiate(uiCanvas);
+
+            Assert.AreEqual("pork_chop", ItemMenu.instance.MakeComputerFormat("pork chop"));
+        }
+
 
      
     }
