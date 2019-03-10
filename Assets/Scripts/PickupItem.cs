@@ -26,8 +26,6 @@ public class PickupItem : MonoBehaviour
 
     public bool canPickUp = false;
 
-    public bool triedAdding = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -78,15 +76,12 @@ public class PickupItem : MonoBehaviour
     public bool AcceptItem()
     {
      
-        if(!triedAdding && PlayerController.instance.AddItem(GetComponent<Item>().itemType))
+        if(PlayerController.instance.CanAddItem(GetComponent<Item>().itemType))
         {
-            // gameObject.SetActive(false);
             return true;
         } else {
             return false;
         } 
-        //owas trying this to keep from adding five times
-        triedAdding = true;
 
     }
 
@@ -124,6 +119,7 @@ public class PickupItem : MonoBehaviour
                 PlayerController.instance.canMove = true;
                 AudioManager.instance.PlaySFX(0);
                 gameObject.GetComponent<SpriteRenderer>().sprite = openedSprite;
+                PlayerController.instance.AddItem(GetComponent<Item>().itemType);
                 currentLine = 0;
                 used = true;
 
