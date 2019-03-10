@@ -87,6 +87,15 @@ public class PlayerController : MonoBehaviour
         }
         return false;
     }
+    //also you need to add a item list too big checker here.
+    public bool CanAddItem(string item)
+    {
+        if(ValidateItem(item))
+        {
+            return true;
+        }
+        return false;
+    }
 
     public bool ValidateItem(string item)
     {

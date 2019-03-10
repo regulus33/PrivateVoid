@@ -59,7 +59,7 @@ public class ItemMenu : MonoBehaviour
         }
     }
 
-    private string DisplayText(string itemName)
+    public string DisplayText(string itemName)
     {
         return itemName.Replace("_", " ");
     }

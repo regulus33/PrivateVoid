@@ -11,70 +11,48 @@ public class InventoryManager : MonoBehaviour
     public string[] dialogLines;
     public int bleepSound = 2;
     private int currentLine = 0;
-    public bool dialogShown;
+    public string itemDisplayName;
     public static InventoryManager instance;
     //dont let user input while typing.
-    private bool typing = false;
+    public bool itemCanAdd;
+    private bool shown;
 
 
     void Start()
     {
         instance = this;
-        itemText.text = dialogLines[currentLine];   
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(dialogBox.activeInHierarchy)
+        if(shown && (Input.GetButtonDown("Click1") || Input.GetKeyDown(KeyCode.N)))
         {
-           tickThroughDialog();
+            ExitMenu();
         }
-
     }
   
-    //animation
-    public IEnumerator TypeText(string message)
-    {
-        typing = true;
-        // wipe text blank before next print
-        itemText.text = "";
-        //Split each char into a char array
-		foreach (char letter in message.ToCharArray()) 
-		{
-            AudioManager.instance.PlayVox(bleepSound);
-			//Add 1 letter each
-			itemText.text += letter;
-			yield return 0;
-			yield return new WaitForSeconds(letterPaused);
-		}
-         typing = false;
-        
-	}
 
-    private void tickThroughDialog()
-    {
-        //is user clicking? and no animation is happening and dialog box is active
-         if (Input.GetButtonUp("Fire1") && !typing && dialogBox.activeInHierarchy)
-         {
-            // We are at last index, set box false
-            if (currentLine >= dialogLines.Length)
-            {
-                dialogBox.SetActive(false);
-                PlayerController.instance.canMove = true;
-                dialogBox.SetActive(false);
-                dialogShown = true;
-            }
-            // we are still deep in the dialog loop, check if name and type lines!
-            else
-            {
-                // itemText.text = dialogLines[currentLine];
-                StartCoroutine (TypeText(dialogLines[currentLine]));
-            }
 
-             currentLine++;
-        }
+    public void SwitchOn()
+    {
+        dialogBox.SetActive(true);
+        shown = true;
+    }
+
+    public void AcceptItem()
+    {
+        itemText.text = "Added " + itemDisplayName;
+    }
+
+    public void RejectItem()
+    {
+        itemText.text = "Its a " + itemDisplayName +". Cant add, get rid of some stuff if you wan't it that bad.";
+    }
+
+    public void ExitMenu()
+    {
+        dialogBox.SetActive(false);
     }
 
     

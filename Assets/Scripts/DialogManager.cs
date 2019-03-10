@@ -32,7 +32,8 @@ public class DialogManager : MonoBehaviour
     {
         if(dialogBox.activeInHierarchy)
         {
-           tickThroughDialog();
+
+           TickThroughDialog();
         }
 
     }
@@ -64,11 +65,12 @@ public class DialogManager : MonoBehaviour
         
 	}
 
-    private void tickThroughDialog()
+    public void TickThroughDialog()
     {
         //is user clicking? and no animation is happening and dialog box is active
          if (Input.GetButtonUp("Fire1") && !typing && dialogBox.activeInHierarchy)
          {
+             Debug.Log("this is the end part and it is running if you see this");
             // We are at last index, set box false
             if (currentLine >= dialogLines.Length)
             {
