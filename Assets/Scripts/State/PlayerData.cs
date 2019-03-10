@@ -66,6 +66,7 @@ public class PlayerData : MonoBehaviour
     public void RemoveItem(string itemName)
     {
         itemList.Remove(itemName);
+        ItemMenu.instance.PopulateItems();
     }
 
     // public void SortItems() 

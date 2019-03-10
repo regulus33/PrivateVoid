@@ -51,6 +51,7 @@ public class ItemMenu : MonoBehaviour
 
     public void PopulateItems()
     {
+        
         ClearItemsFromPreviousState();
         GameObject[] itemsToModify = ExtractUIItems();   
         for(int i=0; i < PlayerData.instance.itemList.Count; i++)
@@ -79,18 +80,16 @@ public class ItemMenu : MonoBehaviour
      string text = item.GetComponent<UnityEngine.UI.Text>().text;
      string itemId = MakeComputerFormat(text);
      PlayerData.instance.UseItem(itemId);
-     RemoveItemFromMenu(item);
+    //  RemoveItemFromMenu(item);
      //update menu with new stats after consuming the item.
      PlayerMenu.instance.Assemble();
      //repopulate items array so you dont have random blank spaces
-     PopulateItems();
-
 
     }
 
-    public void RemoveItemFromMenu(GameObject item){
-        item.GetComponent<UnityEngine.UI.Text>().text = "";
-    }
+    // public void RemoveItemFromMenu(GameObject item){
+    //     item.GetComponent<UnityEngine.UI.Text>().text = "";
+    // }
 
     public string MakeComputerFormat(string name)
     {
