@@ -65,9 +65,13 @@ public class PlayerData : MonoBehaviour
 
     public void RemoveItem(string itemName)
     {
+        //it needs to clear here, I guess c# can't always be relied on to run synchronously
+        //I was populating the menu out of sync with the player data even when having populateItems() run 
+        //explicitly after calling  PlayerData.instance.UseItem(itemId);
         itemList.Remove(itemName);
         ItemMenu.instance.PopulateItems();
     }
+    
 
     // public void SortItems() 
     // {

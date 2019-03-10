@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PlayerMenu : MonoBehaviour
 {
@@ -10,14 +11,18 @@ public class PlayerMenu : MonoBehaviour
     public Text willText;
     public Text withdrawText;
 
+    public GameObject optionsObjects;
     public GameObject theMenu;
 
     public bool shouldAssemble = false;
     public static PlayerMenu instance;
+
+    // public GameObject[] options;
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+        ExtractUIOptions();
     }
 
     // Update is called once per frame
@@ -60,8 +65,14 @@ public class PlayerMenu : MonoBehaviour
             updateWill();
             updateWithdrawal();
             updateWisdom();
+            PlayerController.instance.canMove = false;
         }
         theMenu.SetActive(shouldAssemble);
+        //THE FIRST SELECTED BUTTON NEEDS TO RESET BECAUSE ITEM IS INACTIVE BEFORE.
+        ResetFirstSelected();
+        if(!shouldAssemble){
+            PlayerController.instance.canMove = true;
+        }
     }
 
     public void ToggleMenu()
@@ -69,6 +80,33 @@ public class PlayerMenu : MonoBehaviour
         Debug.Log("toggleing");
         shouldAssemble = !shouldAssemble;
     }
+
+    public GameObject[,] ExtractUIOptions()
+    {
+        int childCount = optionsObjects.transform.childCount;
+        GameObject[] optionsChildren = new GameObject[childCount];
+        for(int i = 0; i < childCount; i++)
+        {
+            optionsChildren[i] = optionsObjects.transform.GetChild(i).gameObject;
+        }
+        GameObject[,] matrixItems = new GameObject[childCount,2];
+         matrixItems[0,0] = optionsChildren[0]; 
+         matrixItems[0,1] = optionsChildren[1]; 
+         matrixItems[1,0] = optionsChildren[2]; 
+         matrixItems[1,1] = optionsChildren[3]; 
+
+        return matrixItems;
+    }
+
+
+    private void ResetFirstSelected()
+    {
+        EventSystem es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        es.SetSelectedGameObject(null);
+        es.SetSelectedGameObject(es.firstSelectedGameObject);
+    }
+   
+
 
 
 }
