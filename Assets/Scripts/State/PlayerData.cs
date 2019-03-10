@@ -52,13 +52,49 @@ public class PlayerData : MonoBehaviour
     {
         if(itemName == "pork_chop")
         {
-            // addHp(porkChopImpact);
+            addHp(porkChopImpact);
+            RemoveItem(itemName);
         }
         if(itemName == "pill_bottle")
         {
             deferWithdrawal(intWithdrawalImpact);
+            RemoveItem(itemName);
         }
 
     }
+
+    public void RemoveItem(string itemName)
+    {
+        itemList.Remove(itemName);
+    }
+
+    // public void SortItems() 
+    // {
+    //     bool itemAfterSpace = true;
+
+    //     while(itemAfterSpace)
+    //     {
+    //         itemAfterSpace = false;
+    //         //dont go outside arr range
+    //         for (int i = 0; i < itemList.Count - 1; i++)
+    //         {
+    //             if(itemList[i] == "")
+    //             {
+    //                 //parallel these a
+    //                 itemList[i] = itemList[i + 1];
+    //                 itemList[i + 1] = "";
+    //                  //parallel these b
+    //                 // numberOfItems[i] = numberOfItems[i + 1];
+    //                 // numberOfItems[i + 1] = 0;
+    //                 //did we move an item? If yes, we need to keep the while loop
+    //                 if(itemList[i] != "") 
+    //                 {
+    //                     itemAfterSpace = true;
+    //                 }
+
+    //             }
+    //         }
+    //     }
+    // }
 
 }

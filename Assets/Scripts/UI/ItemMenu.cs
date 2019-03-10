@@ -51,12 +51,22 @@ public class ItemMenu : MonoBehaviour
 
     public void PopulateItems()
     {
-
+        ClearItemsFromPreviousState();
         GameObject[] itemsToModify = ExtractUIItems();   
         for(int i=0; i < PlayerData.instance.itemList.Count; i++)
         {
             itemsToModify[i].GetComponent<UnityEngine.UI.Text>().text = DisplayText(PlayerData.instance.itemList[i]);
         }
+    }
+
+    public void ClearItemsFromPreviousState()
+    {
+        GameObject[] itemsToModify = ExtractUIItems();   
+        for(int i=0; i < itemsToModify.Length; i++)
+        {
+            itemsToModify[i].GetComponent<UnityEngine.UI.Text>().text = "";
+        }
+
     }
 
     public string DisplayText(string itemName)
@@ -69,13 +79,16 @@ public class ItemMenu : MonoBehaviour
      string text = item.GetComponent<UnityEngine.UI.Text>().text;
      string itemId = MakeComputerFormat(text);
      PlayerData.instance.UseItem(itemId);
-     //update menu with new stats.
+     RemoveItemFromMenu(item);
+     //update menu with new stats after consuming the item.
      PlayerMenu.instance.Assemble();
-     RemoveItem(item);
+     //repopulate items array so you dont have random blank spaces
+     PopulateItems();
+
 
     }
 
-    public void RemoveItem(GameObject item){
+    public void RemoveItemFromMenu(GameObject item){
         item.GetComponent<UnityEngine.UI.Text>().text = "";
     }
 
@@ -83,4 +96,6 @@ public class ItemMenu : MonoBehaviour
     {
         return name.Replace(" ","_");
     }
+
+   
 }
