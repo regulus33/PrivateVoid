@@ -40,9 +40,11 @@ public class PlayerData : MonoBehaviour
 
     public void deferWithdrawal(int amount)
     {
-        if(withdrawal - amount > 0)
+        if((withdrawal - amount)> 0)
         {
             withdrawal -= amount;
+        } else {
+            withdrawal = 0;
         }
     }
 
@@ -50,7 +52,7 @@ public class PlayerData : MonoBehaviour
     {
         if(itemName == "pork_chop")
         {
-            addHp(porkChopImpact);
+            // addHp(porkChopImpact);
         }
         if(itemName == "pill_bottle")
         {
