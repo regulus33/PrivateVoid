@@ -94,4 +94,8 @@ When picking up an Item, the method for this is on the item itself.
     }
 ```
 
-This is where shit gets tangled :( you then call PlayerController's AddItem() and after a succesfull action you Remove it. 
+This is where shit gets tangled :( you then call PlayerController's AddItem() and after a succesfull action you Remove it.
+
+Items changed a lot now since I added this part. 
+
+Mostly the item pickup logic is in PickupItem now dialogmanager and everything
