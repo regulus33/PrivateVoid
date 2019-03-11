@@ -32,12 +32,17 @@ public class PlayerMenu : MonoBehaviour
         {
             ToggleMenu();
             Assemble();
+            //need to close item menu as well if its open when toggling
+            //if its open we can just assume that its time to close here
+            if(ItemMenu.instance.menuDisplay.activeInHierarchy)
+            {
+                ItemMenu.instance.ExitMenu();
+            }
         }
     }
 
     public void updateHP()
     {
-        
         hpText.text = PlayerData.instance.hp.ToString(); 
     }
 
@@ -115,7 +120,7 @@ public class PlayerMenu : MonoBehaviour
 
     public void Exit(){
         CloseMenu();
-        ItemMenu.instance.ShowMenu();
+        ItemMenu.instance.ExitMenu();
     }
 
 

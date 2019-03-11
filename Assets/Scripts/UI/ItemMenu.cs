@@ -83,6 +83,13 @@ public class ItemMenu : MonoBehaviour
 
     }
 
+    public void ExitMenu()
+    {
+        shouldShow = false;
+        menuDisplay.SetActive(false);
+
+    }
+
     // public void RemoveItemFromMenu(GameObject item){
     //     item.GetComponent<UnityEngine.UI.Text>().text = "";
     // }
