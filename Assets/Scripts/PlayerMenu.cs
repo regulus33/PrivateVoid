@@ -117,8 +117,6 @@ public class PlayerMenu : MonoBehaviour
         CloseMenu();
         ItemMenu.instance.ShowMenu();
     }
-   
-
 
 
 }

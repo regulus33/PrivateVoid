@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class BleepOnSelect : MonoBehaviour, ISelectHandler
+public class UIManager : MonoBehaviour, ISelectHandler
 {
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class BleepOnSelect : MonoBehaviour, ISelectHandler
     public void OnSelect(BaseEventData eventData)
     {
         Debug.Log("selectedddddd");
-        AudioManager.instance.PlayVox(0);
+        AudioManager.instance.PlaySFX(0);
     }
    
 }
