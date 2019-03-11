@@ -105,6 +105,18 @@ public class PlayerMenu : MonoBehaviour
         es.SetSelectedGameObject(null);
         es.SetSelectedGameObject(es.firstSelectedGameObject);
     }
+
+    public void CloseMenu()
+    {
+        shouldAssemble = false;
+        theMenu.SetActive(false);
+        PlayerController.instance.canMove = true;
+    }
+
+    public void Exit(){
+        CloseMenu();
+        ItemMenu.instance.ShowMenu();
+    }
    
 
 

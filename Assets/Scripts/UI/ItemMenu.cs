@@ -23,7 +23,7 @@ public class ItemMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        showMenu();
+        
     }
 
     public GameObject[] ExtractUIItems()
@@ -38,15 +38,11 @@ public class ItemMenu : MonoBehaviour
         return itemsChildren;
     }
     
-    public void showMenu()
+    public void ShowMenu()
     {
-        if(Input.GetButtonDown("Fire2") || Input.GetKeyDown(KeyCode.M))
-        {
-            //flip should show bool
             shouldShow = !shouldShow;
             menuDisplay.SetActive(shouldShow);
             PopulateItems();
-        }
     }
 
     public void PopulateItems()
