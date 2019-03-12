@@ -82,8 +82,9 @@ public class PlayerMenu : MonoBehaviour
 
     public void ToggleMenu()
     {
-        Debug.Log("toggleing");
         shouldAssemble = !shouldAssemble;
+        AudioManager.instance.PlaySFX(1);
+      
     }
 
     public GameObject[,] ExtractUIOptions()
@@ -104,11 +105,15 @@ public class PlayerMenu : MonoBehaviour
     }
 
 
-    private void ResetFirstSelected()
+    private bool ResetFirstSelected()
     {
+        //set should bleep to false just so this non human interaction doesnt make noise
+        BleepOnSelect.instance.shouldBleep = false;
         EventSystem es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         es.SetSelectedGameObject(null);
         es.SetSelectedGameObject(es.firstSelectedGameObject);
+        return BleepOnSelect.instance.shouldBleep = true;
+
     }
 
     public void CloseMenu()

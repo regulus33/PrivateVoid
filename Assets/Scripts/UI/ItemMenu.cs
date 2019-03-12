@@ -79,6 +79,8 @@ public class ItemMenu : MonoBehaviour
     //  RemoveItemFromMenu(item);
      //update menu with new stats after consuming the item.
      PlayerMenu.instance.Assemble();
+     //bleep sound sound
+     AudioManager.instance.PlaySFX(1);
      //repopulate items array so you dont have random blank spaces
 
     }
