@@ -21,6 +21,11 @@ public class BleepOnSelect : MonoBehaviour, ISelectHandler
         
     }
 
+    public void HandleOutBounds()
+    {
+        
+    }
+
     public void OnSelect(BaseEventData eventData)
     {
         if(shouldBleep){
