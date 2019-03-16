@@ -11,8 +11,8 @@ public class ItemMenu : MonoBehaviour
     public GameObject menuDisplay;
 
     public static ItemMenu instance;
-
-    private bool shouldShow = false;
+    
+    public bool shouldShow = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,6 @@ public class ItemMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public GameObject[] ExtractUIItems()
@@ -38,13 +37,7 @@ public class ItemMenu : MonoBehaviour
         return itemsChildren;
     }
     
-    public void ShowMenu()
-    {
-            shouldShow = !shouldShow;
-            menuDisplay.SetActive(shouldShow);
-            PopulateItems();
-            AudioManager.instance.PlayUI(3);
-    }
+
 
     public void PopulateItems()
     {

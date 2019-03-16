@@ -44,4 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2659997855958838530, guid: 3fec4df1d86284a78b21ea1a36975b8f, type: 3}
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 5309175583411497293, guid: e7973a4a2da3444b3aa01322d9743acd,
+    type: 3}
+  eventSystem: {fileID: 7224034301277117205, guid: f2f3c82f61544481f8e6a5a33158c840,
+    type: 3}
+  itemMenu: {fileID: 4046032947074974257, guid: 70607263060e3479782033d8fd059fc8,
+    type: 3}
+  playerMenu: {fileID: 3220019334830210816, guid: 7467e993c45d040349a14bc28a8098e4,
+    type: 3}

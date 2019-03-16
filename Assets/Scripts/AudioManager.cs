@@ -47,7 +47,8 @@ public class AudioManager : MonoBehaviour {
 
     public void PlayUI(int soundToPlay)
     {
-        Instantiate(ui[soundToPlay]).Play();
+
+       Instantiate(ui[soundToPlay]).Play();
     }
 
     public void PlayWeird(int soundToPlay)

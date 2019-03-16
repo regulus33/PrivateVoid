@@ -121,5 +121,14 @@ public class PlayerMenu : MonoBehaviour
         AudioManager.instance.PlayUI(1);
     }
 
+    public void ShowItemsMenu()
+    {
+            Debug.Log(ItemMenu.instance.shouldShow + " ");
+            ItemMenu.instance.shouldShow = !ItemMenu.instance.shouldShow;
+            ItemMenu.instance.PopulateItems();
+            ItemMenu.instance.menuDisplay.SetActive(ItemMenu.instance.shouldShow);
+            AudioManager.instance.PlayUI(3);
+    }
+
 
 }
