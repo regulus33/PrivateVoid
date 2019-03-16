@@ -72,11 +72,10 @@ public class PlayerMenu : MonoBehaviour
             updateWithdrawal();
             updateWisdom();
             PlayerController.instance.canMove = false;
-        }
-        theMenu.SetActive(shouldAssemble);
-        //THE FIRST SELECTED BUTTON NEEDS TO RESET BECAUSE ITEM IS INACTIVE BEFORE.
-        ResetFirstSelected();
-        if(!shouldAssemble){
+            theMenu.SetActive(shouldAssemble);
+            ResetFirstSelected();
+        }else{
+            theMenu.SetActive(shouldAssemble);
             PlayerController.instance.canMove = true;
         }
     }
