@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
 
-    public AudioSource[] sfx;
-    public AudioSource[] bgm;
-    public AudioSource[] vox;
+    public AudioSource[] coins;
+    public AudioSource[] impacts;
+    public AudioSource[] negative;
+    public AudioSource[] pause;
+    public AudioSource[] soundTrack;
+    public AudioSource[] ui;
+    public AudioSource[] weird;
 
     public static AudioManager instance;
 
@@ -21,40 +25,53 @@ public class AudioManager : MonoBehaviour {
 	void Update () {
 	}
 
-    public void PlaySFX(int soundToPlay)
+    public void Playimpacts(int soundToPlay)
     {
-        if (soundToPlay < sfx.Length)
-        {
-            sfx[soundToPlay].Play();
-        }
+        impacts[soundToPlay].Play();
     }
 
-    public void PlayVox(int soundToPlay)
+    public void PlayCoins(int soundToPlay)
     {
-        if (soundToPlay < vox.Length)
-        {
-            vox[soundToPlay].Play();
-        }
+        coins[soundToPlay].Play();
     }
 
-    public void PlayBGM(int musicToPlay)
+    public void PlayNegative(int soundToPlay)
     {
-        if (!bgm[musicToPlay].isPlaying)
+        negative[soundToPlay].Play();
+    }
+
+    public void PlayPause(int soundToPlay)
+    {
+        pause[soundToPlay].Play();
+    }
+
+    public void PlayUI(int soundToPlay)
+    {
+        ui[soundToPlay].Play();
+    }
+
+    public void PlayWeird(int soundToPlay)
+    {
+        weird[soundToPlay].Play();
+    }
+    public void PlaySoundTrack(int musicToPlay)
+    {
+        if (!soundTrack[musicToPlay].isPlaying)
         {
             StopMusic();
 
-            if (musicToPlay < bgm.Length)
+            if (musicToPlay < soundTrack.Length)
             {
-                bgm[musicToPlay].Play();
+                soundTrack[musicToPlay].Play();
             }
         }
     }
 
     public void StopMusic()
     {
-        for(int i = 0; i < bgm.Length; i++)
+        for(int i = 0; i < soundTrack.Length; i++)
         {
-            bgm[i].Stop();
+            soundTrack[i].Stop();
         }
     }
 }

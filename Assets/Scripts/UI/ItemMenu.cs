@@ -80,7 +80,7 @@ public class ItemMenu : MonoBehaviour
      //update menu with new stats after consuming the item.
      PlayerMenu.instance.Assemble();
      //bleep sound sound
-     AudioManager.instance.PlaySFX(1);
+     AudioManager.instance.PlayUI(1);
      //repopulate items array so you dont have random blank spaces
 
     }

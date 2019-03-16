@@ -55,7 +55,7 @@ public class DialogManager : MonoBehaviour
         //Split each char into a char array
 		foreach (char letter in message.ToCharArray()) 
 		{
-            AudioManager.instance.PlayVox(voiceSound);
+            AudioManager.instance.PlayCoins(voiceSound);
 			//Add 1 letter each
 			dialogText.text += letter;
 			yield return 0;

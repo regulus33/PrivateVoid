@@ -22,7 +22,6 @@ public class PlayerMenu : MonoBehaviour
     void Start()
     {
         instance = this;
-        ExtractUIOptions();
     }
 
     // Update is called once per frame
@@ -84,37 +83,31 @@ public class PlayerMenu : MonoBehaviour
     {
         PlayerController.instance.enabled = !PlayerController.instance.enabled ;
         shouldAssemble = !shouldAssemble;
-        AudioManager.instance.PlaySFX(1);
+        AudioManager.instance.PlayUI(1);
       
     }
-
-    public GameObject[,] ExtractUIOptions()
-    {
-        int childCount = optionsObjects.transform.childCount;
-        GameObject[] optionsChildren = new GameObject[childCount];
-        for(int i = 0; i < childCount; i++)
-        {
-            optionsChildren[i] = optionsObjects.transform.GetChild(i).gameObject;
-        }
-        GameObject[,] matrixItems = new GameObject[childCount,2];
-         matrixItems[0,0] = optionsChildren[0]; 
-         matrixItems[0,1] = optionsChildren[1]; 
-         matrixItems[1,0] = optionsChildren[2]; 
-         matrixItems[1,1] = optionsChildren[3]; 
-
-        return matrixItems;
-    }
-
-
     private void ResetFirstSelected()
     {
+
         //set should bleep to false just so this non human interaction doesnt make noise
-        // BleepOnSelect.instance.shouldBleep = false;
+        // optionsObjects.
+ 
+        enableBleeps(false);
         EventSystem es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         es.SetSelectedGameObject(null);
         es.SetSelectedGameObject(es.firstSelectedGameObject);
-        // return BleepOnSelect.instance.shouldBleep = true;
+        enableBleeps(true);
+        
 
+    }
+
+    private void enableBleeps(bool should)
+    {
+        int childrenCount =  optionsObjects.transform.childCount;
+        for(int i = 0; i < childrenCount; i++)
+        {
+            optionsObjects.transform.GetChild(i).GetComponent<BleepOnSelect>().shouldBleep = should;  
+        }
     }
 
     public void CloseMenu()

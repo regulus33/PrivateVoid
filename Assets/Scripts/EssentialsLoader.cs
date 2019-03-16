@@ -5,6 +5,7 @@ using UnityEngine;
 public class EssentialsLoader : MonoBehaviour
 {
     public GameObject player;
+    public GameObject audioManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,11 @@ public class EssentialsLoader : MonoBehaviour
             //what is this clone thing all about? 
             PlayerController clone = Instantiate(player).GetComponent<PlayerController>();
             PlayerController.instance = clone;
+        }
+
+        if(AudioManager.instance == null)
+        {
+            AudioManager.instance = Instantiate(audioManager).GetComponent<AudioManager>();            
         }
 
 

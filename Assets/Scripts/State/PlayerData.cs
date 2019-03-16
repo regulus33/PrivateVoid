@@ -22,6 +22,7 @@ public class PlayerData : MonoBehaviour
     void Start()
     {
         instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame

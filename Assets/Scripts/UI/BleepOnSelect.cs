@@ -29,7 +29,7 @@ public class BleepOnSelect : MonoBehaviour, ISelectHandler
     public void OnSelect(BaseEventData eventData)
     {
         if(shouldBleep){
-            AudioManager.instance.PlayVox(0);
+            AudioManager.instance.PlayCoins(0);
         }
 
     }

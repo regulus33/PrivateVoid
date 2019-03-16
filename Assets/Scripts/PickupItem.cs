@@ -93,7 +93,7 @@ public class PickupItem : MonoBehaviour
         //Split each char into a char array
 		foreach (char letter in message.ToCharArray()) 
 		{
-            AudioManager.instance.PlayVox(0);
+            AudioManager.instance.PlayCoins(0);
 			//Add 1 letter each
 			dialogText.text += letter;
 			yield return 0;
@@ -117,7 +117,7 @@ public class PickupItem : MonoBehaviour
                 //open present, make bleep sound and close dialog boxxx
                 dialogBox.SetActive(false);
                 PlayerController.instance.canMove = true;
-                AudioManager.instance.PlaySFX(0);
+                AudioManager.instance.PlayUI(0);
                 gameObject.GetComponent<SpriteRenderer>().sprite = openedSprite;
                 PlayerController.instance.AddItem(GetComponent<Item>().itemType);
                 currentLine = 0;
