@@ -28,16 +28,16 @@ public class EssentialsLoader : MonoBehaviour
             AudioManager.instance = Instantiate(audioManager).GetComponent<AudioManager>();            
         }
 
-        // if(ItemMenu.instance == null)
-        // {
-        //     ItemMenu.instance  = Instantiate(itemMenu).GetComponent<ItemMenu>();
-        // }
+        if(ItemMenu.instance == null)
+        {
+            ItemMenu.instance  = Instantiate(itemMenu).GetComponent<ItemMenu>();
+        }
 
         
-        // if(PlayerMenu.instance == null)
-        // {
-        //     PlayerMenu.instance = Instantiate(playerMenu).GetComponent<PlayerMenu>();
-        // }
+        if(PlayerMenu.instance == null)
+        {
+            PlayerMenu.instance = Instantiate(playerMenu).GetComponent<PlayerMenu>();
+        }
 
         if(!GameObject.Find("EventSystem"))
         {

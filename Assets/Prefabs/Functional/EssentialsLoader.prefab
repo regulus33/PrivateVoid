@@ -48,7 +48,7 @@ MonoBehaviour:
     type: 3}
   eventSystem: {fileID: 7224034301277117205, guid: f2f3c82f61544481f8e6a5a33158c840,
     type: 3}
-  itemMenu: {fileID: 4046032947074974257, guid: 70607263060e3479782033d8fd059fc8,
+  itemMenu: {fileID: 2571874539384121360, guid: 3ff4544f716b648a88df6d407dbbc7b9,
     type: 3}
-  playerMenu: {fileID: 3220019334830210816, guid: 7467e993c45d040349a14bc28a8098e4,
+  playerMenu: {fileID: 405935266656396907, guid: 99361e9e306cf40b5a7dee89a4ed3ca7,
     type: 3}
