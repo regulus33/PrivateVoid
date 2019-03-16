@@ -99,3 +99,14 @@ This is where shit gets tangled :( you then call PlayerController's AddItem() an
 Items changed a lot now since I added this part. 
 
 Mostly the item pickup logic is in PickupItem now dialogmanager and everything
+
+
+# Prefabs 
+
+## prefabs that are always the same on any page
+
+* `AudioManager` is always the same, its fine to load up all sounds in each scene. It would be too complex to keep track otherwise. 
+
+* `PlayerData` needs to travel into every scene and be saved and re-instantiated. 
+
+
