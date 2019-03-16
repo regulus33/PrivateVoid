@@ -69757,6 +69757,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7652815554250386986, guid: 99361e9e306cf40b5a7dee89a4ed3ca7,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 1550135601}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99361e9e306cf40b5a7dee89a4ed3ca7, type: 3}
 --- !u!1 &407040736
@@ -82775,6 +82780,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1550135601 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2571874538089509636, guid: 3ff4544f716b648a88df6d407dbbc7b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 596242505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1586753318
 GameObject:
   m_ObjectHideFlags: 0

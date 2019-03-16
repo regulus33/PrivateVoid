@@ -54,11 +54,4 @@ public class EssentialsLoader : MonoBehaviour
         
     }
 
-    public void SetFirstSelectedOnEventSystem(GameObject setter)
-    {
-        EventSystem es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
-        //clear it before it does anything 
-        es.SetSelectedGameObject(null);
-        es.SetSelectedGameObject(setter);  
-    }
 }

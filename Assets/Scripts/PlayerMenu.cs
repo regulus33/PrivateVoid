@@ -22,6 +22,8 @@ public class PlayerMenu : MonoBehaviour
     void Start()
     {
         instance = this;
+
+
     }
 
     // Update is called once per frame
@@ -86,12 +88,12 @@ public class PlayerMenu : MonoBehaviour
         AudioManager.instance.PlayUI(1);
       
     }
-    private void ResetFirstSelected()
+    public void ResetFirstSelected()
     {
         enableBleeps(false);
+        Button btn = GameObject.Find("save").GetComponent<Button>();
         EventSystem es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
-        es.SetSelectedGameObject(null);
-        es.SetSelectedGameObject(es.firstSelectedGameObject);
+        es.SetSelectedGameObject (btn.gameObject);
         enableBleeps(true);
         
 
@@ -129,6 +131,8 @@ public class PlayerMenu : MonoBehaviour
             ItemMenu.instance.menuDisplay.SetActive(ItemMenu.instance.shouldShow);
             AudioManager.instance.PlayUI(3);
     }
+
+
 
 
 }

@@ -28,6 +28,7 @@ public class BleepOnSelect : MonoBehaviour, ISelectHandler
 
     public void OnSelect(BaseEventData eventData)
     {
+        Debug.Log("event");
         if(shouldBleep){
             AudioManager.instance.PlayUI(0);
         }
