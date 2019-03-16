@@ -27,42 +27,43 @@ public class AudioManager : MonoBehaviour {
 
     public void Playimpacts(int soundToPlay)
     {
-        impacts[soundToPlay].Play();
+        Instantiate(impacts[soundToPlay]).Play();
     }
 
     public void PlayCoins(int soundToPlay)
     {
-        coins[soundToPlay].Play();
+       Instantiate(coins[soundToPlay]).Play();
     }
 
     public void PlayNegative(int soundToPlay)
     {
-        negative[soundToPlay].Play();
+       Instantiate(negative[soundToPlay]).Play();
     }
 
     public void PlayPause(int soundToPlay)
     {
-        pause[soundToPlay].Play();
+        Instantiate(pause[soundToPlay]).Play();
     }
 
     public void PlayUI(int soundToPlay)
     {
-        ui[soundToPlay].Play();
+        Instantiate(ui[soundToPlay]).Play();
     }
 
     public void PlayWeird(int soundToPlay)
     {
-        weird[soundToPlay].Play();
+       Instantiate(weird[soundToPlay]).Play();
     }
     public void PlaySoundTrack(int musicToPlay)
     {
-        if (!soundTrack[musicToPlay].isPlaying)
+        AudioSource sound = Instantiate(soundTrack[musicToPlay]);
+        if (!sound.isPlaying)
         {
             StopMusic();
 
             if (musicToPlay < soundTrack.Length)
             {
-                soundTrack[musicToPlay].Play();
+                sound.Play();
             }
         }
     }

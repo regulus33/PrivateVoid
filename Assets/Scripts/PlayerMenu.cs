@@ -88,10 +88,6 @@ public class PlayerMenu : MonoBehaviour
     }
     private void ResetFirstSelected()
     {
-
-        //set should bleep to false just so this non human interaction doesnt make noise
-        // optionsObjects.
- 
         enableBleeps(false);
         EventSystem es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         es.SetSelectedGameObject(null);
@@ -122,6 +118,7 @@ public class PlayerMenu : MonoBehaviour
     public void Exit(){
         CloseMenu();
         ItemMenu.instance.ExitMenu();
+        AudioManager.instance.PlayUI(1);
     }
 
 

@@ -43,6 +43,7 @@ public class ItemMenu : MonoBehaviour
             shouldShow = !shouldShow;
             menuDisplay.SetActive(shouldShow);
             PopulateItems();
+            AudioManager.instance.PlayUI(3);
     }
 
     public void PopulateItems()

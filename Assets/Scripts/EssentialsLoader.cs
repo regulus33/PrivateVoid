@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class EssentialsLoader : MonoBehaviour
 {
     public GameObject player;
     public GameObject audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
