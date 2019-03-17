@@ -89,11 +89,11 @@ public class PlayerMenu : MonoBehaviour
     }
     IEnumerator ResetFirstSelected()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
         enableBleeps(false);
         
-        // Button btn = GameObject.Find("save").GetComponent<Button>();
-        GameObject btn = GameObject.FindWithTag("first_item");
+        Button btn = GameObject.Find("save").GetComponent<Button>();
+        // GameObject btn = GameObject.FindWithTag("first_item");
         EventSystem es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         es.SetSelectedGameObject (btn.gameObject);
         enableBleeps(true);
