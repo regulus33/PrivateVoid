@@ -46,9 +46,11 @@ MonoBehaviour:
   player: {fileID: 2659997855958838530, guid: 3fec4df1d86284a78b21ea1a36975b8f, type: 3}
   audioManager: {fileID: 5309175583411497293, guid: e7973a4a2da3444b3aa01322d9743acd,
     type: 3}
-  eventSystem: {fileID: 7224034301277117205, guid: f2f3c82f61544481f8e6a5a33158c840,
+  eventSystem: {fileID: 5321382475936550024, guid: b370315dffe8c4514b15dcd87001a981,
     type: 3}
   itemMenu: {fileID: 2571874539384121360, guid: 3ff4544f716b648a88df6d407dbbc7b9,
     type: 3}
   playerMenu: {fileID: 405935266656396907, guid: 99361e9e306cf40b5a7dee89a4ed3ca7,
+    type: 3}
+  playerData: {fileID: 3595993754064397517, guid: a6edf3d0ebb0b460681478ab8e8cf95c,
     type: 3}

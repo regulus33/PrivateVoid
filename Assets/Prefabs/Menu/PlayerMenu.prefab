@@ -1179,8 +1179,6 @@ MonoBehaviour:
   optionsObjects: {fileID: 405935265461697871}
   theMenu: {fileID: 405935266889846117}
   shouldAssemble: 0
-  menuButton: {fileID: 8225746991406468080, guid: 51e21d76125f6405da808f1a7b3b9d1c,
-    type: 3}
 --- !u!1 &405935266702939178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,6 +1519,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: save
+      objectReference: {fileID: 0}
+    - target: {fileID: 8225746991406468080, guid: 51e21d76125f6405da808f1a7b3b9d1c,
+        type: 3}
+      propertyPath: m_TagString
+      value: first_item
       objectReference: {fileID: 0}
     - target: {fileID: 8225746991406468095, guid: 51e21d76125f6405da808f1a7b3b9d1c,
         type: 3}

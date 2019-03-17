@@ -7,11 +7,10 @@ public class EssentialsLoader : MonoBehaviour
 {
     public GameObject player;
     public GameObject audioManager;
-
     public GameObject eventSystem;
-
     public GameObject itemMenu;
     public GameObject playerMenu;
+    public GameObject playerData; 
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +42,12 @@ public class EssentialsLoader : MonoBehaviour
         {
            Instantiate(eventSystem);
 
+        }
+
+        if(PlayerData.instance == null)
+        {
+            PlayerData.instance = Instantiate(playerData).GetComponent<PlayerData>();
+            Debug.LogError("[PlayerData] PlayerData destroyed somehow.");            
         }
 
 

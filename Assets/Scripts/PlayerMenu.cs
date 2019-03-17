@@ -73,7 +73,7 @@ public class PlayerMenu : MonoBehaviour
             updateWisdom();
             PlayerController.instance.canMove = false;
             theMenu.SetActive(shouldAssemble);
-            ResetFirstSelected();
+            StartCoroutine( ResetFirstSelected());
         }else{
             theMenu.SetActive(shouldAssemble);
             PlayerController.instance.canMove = true;
@@ -87,14 +87,16 @@ public class PlayerMenu : MonoBehaviour
         AudioManager.instance.PlayUI(1);
       
     }
-    public void ResetFirstSelected()
+    IEnumerator ResetFirstSelected()
     {
+        yield return new WaitForSeconds(1f);
         enableBleeps(false);
-        Button btn = GameObject.Find("save").GetComponent<Button>();
+        
+        // Button btn = GameObject.Find("save").GetComponent<Button>();
+        GameObject btn = GameObject.FindWithTag("first_item");
         EventSystem es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         es.SetSelectedGameObject (btn.gameObject);
         enableBleeps(true);
-        
 
     }
 
