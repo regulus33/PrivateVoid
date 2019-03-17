@@ -39,6 +39,11 @@ public class EssentialsLoader : MonoBehaviour
             PlayerMenu.instance = Instantiate(playerMenu).GetComponent<PlayerMenu>();
         }
 
+        if(!GameObject.FindWithTag("itemDialogBox"))
+        {
+           Instantiate(itemDialogBox);
+        }
+
         if(!GameObject.Find("EventSystem"))
         {
            Instantiate(eventSystem);

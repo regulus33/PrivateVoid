@@ -28,6 +28,7 @@ public class PickupItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         dialogBox = GameObject.FindWithTag("itemDialogBox");
         Debug.Log(dialogBox + "...");
         dialogText = dialogBox.gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>();

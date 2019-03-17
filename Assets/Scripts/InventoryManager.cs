@@ -26,6 +26,7 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    
         if(shown && (Input.GetButtonDown("Click1") || Input.GetKeyDown(KeyCode.N)))
         {
             ExitMenu();
