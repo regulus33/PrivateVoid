@@ -134,9 +134,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7014dd19ea1164fa7b2037fcdc7adf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDialog: {fileID: 0}
-  dialogText: {fileID: 0}
-  dialogBox: {fileID: 0}
+  itemDialog: {fileID: 8096281882338811543, guid: cae4f530fd0d142b6bb4d88413102282,
+    type: 3}
+  dialogText: {fileID: 4711213746366992451, guid: 40609df6aa8b64612ad27a32bae99f07,
+    type: 3}
+  dialogBox: {fileID: 8096281882338811543, guid: cae4f530fd0d142b6bb4d88413102282,
+    type: 3}
   timeToGetDialogGoing: 0
   letterPaused: 0.001
   typing: 0

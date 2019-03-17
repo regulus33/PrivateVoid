@@ -8,6 +8,7 @@ TagManager:
   - pork_chop
   - pill_bottle
   - first_item
+  - itemDialogBox
   layers:
   - Default
   - TransparentFX

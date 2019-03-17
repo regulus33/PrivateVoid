@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class PickupItem : MonoBehaviour
 {
-    public GameObject itemDialog;
+    private GameObject dialogBox;
 
-    public Text dialogText;
-    public GameObject dialogBox;
+    private Text dialogText;
 
     public bool timeToGetDialogGoing;
 
@@ -29,6 +28,9 @@ public class PickupItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dialogBox = GameObject.FindWithTag("itemDialogBox");
+        Debug.Log(dialogBox + "...");
+        dialogText = dialogBox.gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>();
         dialogText.text = dialogLines[currentLine];  
     }
 
@@ -41,7 +43,7 @@ public class PickupItem : MonoBehaviour
         {
           if(AcceptItem())
           { 
-              dialogBox.SetActive(true);
+              dialogBox.gameObject.transform.GetChild(0).gameObject.SetActive(true);
               timeToGetDialogGoing = true; 
               
           } else {
@@ -50,7 +52,6 @@ public class PickupItem : MonoBehaviour
         }
         if(timeToGetDialogGoing)
         {
-            Debug.Log("time to get dialog going ran");
             TickThroughDialog();
         }
       }
@@ -93,7 +94,7 @@ public class PickupItem : MonoBehaviour
         //Split each char into a char array
 		foreach (char letter in message.ToCharArray()) 
 		{
-            AudioManager.instance.PlayCoins(0);
+            AudioManager.instance.PlayCoins(4);
 			//Add 1 letter each
 			dialogText.text += letter;
 			yield return 0;
@@ -105,9 +106,7 @@ public class PickupItem : MonoBehaviour
 
      public void TickThroughDialog()
     {
-        Debug.Log("TickThroughDialog");  
-        //is user clicking? and no animation is happening and dialog box is active
-            Debug.Log("" + (Input.GetButtonUp("Fire1")));
+        //is user clicking? and no animation is haappening and dialog box is active
          if (!typing && dialogBox.activeInHierarchy && (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.M)))
          {
            Debug.Log("THE END OF DIALOG PART IS RUNNING");    
@@ -115,7 +114,7 @@ public class PickupItem : MonoBehaviour
             if (currentLine >= dialogLines.Length)
             {
                 //open present, make bleep sound and close dialog boxxx
-                dialogBox.SetActive(false);
+                dialogBox.gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 PlayerController.instance.canMove = true;
                 AudioManager.instance.PlayUI(0);
                 gameObject.GetComponent<SpriteRenderer>().sprite = openedSprite;
