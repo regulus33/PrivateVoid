@@ -109,4 +109,6 @@ Mostly the item pickup logic is in PickupItem now dialogmanager and everything
 
 * `PlayerData` needs to travel into every scene and be saved and re-instantiated. 
 
+* `For now we add itemDialogBox along with each item to every scene, doing it programmatically would be cool but we don't have the time to sit around mulling on this`
+
 
